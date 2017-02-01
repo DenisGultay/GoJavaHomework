@@ -1,9 +1,9 @@
-package com.denisgultay.practice.module01.Task011;
+package com.denisgultay.practice.module01.task011;
 
 /**
  * Created by Користувач on 30.01.2017.
  */
-public class ThirdClass {
+public class FourthClass {
 
     public static void main(String[] args) {
 

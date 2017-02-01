@@ -1,4 +1,4 @@
-package com.denisgultay.practice.module01.Task021;
+package com.denisgultay.practice.module02.task021;
 
 /**
  * Created by Користувач on 31.01.2017.
@@ -10,6 +10,7 @@ public class HomeWork21 {
         int[] intArray = {-1, 3, -5, 1, 4, 2, 7, 11, 13, -3};
 
         double[] doubleArray = {-1.2, 3.1, -0.5, 1.7, 5.5, 2.5, 0.7, 1.1, 1.3, -3.5};
+
 
         HomeWork21 array = new HomeWork21();
 

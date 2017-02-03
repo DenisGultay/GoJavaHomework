@@ -8,266 +8,185 @@ public class CalculatorOfArrays {
     public static void main(String[] args) {
 
         int[] intArray = {-1, 3, -5, 1, 4, 2, 7, 11, 13, -3};
-
         double[] doubleArray = {-1.2, 3.1, -0.5, 1.7, 5.5, 2.5, 0.7, 1.1, 1.3, -3.5};
-
 
         CalculatorOfArrays array = new CalculatorOfArrays();
 
-        array.sum(intArray);
-
-        array.sum(doubleArray);
-
-        array.min(intArray);
-
-        array.min(doubleArray);
-
-        array.max(intArray);
-
-        array.max(doubleArray);
-
-        array.maxPositive(intArray);
-
-        array.maxPositive(doubleArray);
-
-        array.multiplication(intArray);
-
-        array.multiplication(doubleArray);
-
-        array.modulus(intArray);
-
-        array.modulus(doubleArray);
-
-        array.secondLargest(intArray);
-
-        array.secondLargest(doubleArray);
+        array.printSumOfArray(intArray);
+        array.printSumOfArray(doubleArray);
+        array.printMinOfArray(intArray);
+        array.printMinOfArray(doubleArray);
+        array.printMaxOfArray(intArray);
+        array.printMaxOfArray(doubleArray);
+        array.maxPositiveOfArray(intArray);
+        array.maxPositiveOfArray(doubleArray);
+        array.multiplicationOfArray(intArray);
+        array.multiplicationOfArray(doubleArray);
+        array.firstLastElementModulus(intArray);
+        array.firstLastElementModulus(doubleArray);
+        array.secondLargestElementOfArray(intArray);
+        array.secondLargestElementOfArray(doubleArray);
+        array.maxPositiveOfArray(new int[]{-2, -3, -10});
     }
 
 
-    public void sum(int[] array) {
-
-        int sum = 0;
-
+    public void printSumOfArray(int[] array) {
+        int resultSumOfIntegerArray = 0;
         for (int i = 0; i < array.length; i++) {
-
-            sum += array[i];
-
+            resultSumOfIntegerArray += array[i];
         }
-        System.out.println("Сума чисел масиву intArray: " + sum);
+        System.out.println("Сума чисел масиву intArray: " + resultSumOfIntegerArray);
     }
 
-    public void sum(double[] array) {
 
-        double dsum = 0;
-
+    public void printSumOfArray(double[] array) {
+        double resultSumOfDoubleArray = 0;
         for (int j = 0; j < array.length; j++) {
-
-            dsum += array[j];
-
+            resultSumOfDoubleArray += array[j];
         }
-
-        System.out.println("Сума чисел масиву doubleArray: " + dsum);
-
+        System.out.println("Сума чисел масиву doubleArray: " + resultSumOfDoubleArray);
     }
 
-    public void min(int[] array) {
 
-        int min = array[0];
-
+    public void printMinOfArray(int[] array) {
+        int minIntegerElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (min > array[i]) {
-
-                min = array[i];
-
-                System.out.println("Мінімум з чисел масиву intArray: " + min);
+            if (minIntegerElement > array[i]) {
+                minIntegerElement = array[i];
+                System.out.println("Мінімум з чисел масиву intArray: " + minIntegerElement);
             }
         }
     }
 
-    public void max(int[] array) {
 
-        int max = array[0];
-
+    public void printMaxOfArray(int[] array) {
+        int maxIntegerElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (max < array[i]) {
-
-                max = array[i];
-
+            if (maxIntegerElement < array[i]) {
+                maxIntegerElement = array[i];
             }
         }
-
-        System.out.println("Максимум з чисел масиву intArray: " + max);
-
+        System.out.println("Максимум з чисел масиву intArray: " + maxIntegerElement);
     }
 
-    public void min(double[] array) {
 
-        double min = array[0];
-
+    public void printMinOfArray(double[] array) {
+        double minDoubleElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (min > array[i]) {
-
-                min = array[i];
-
-                System.out.println("Мінімум з чисел масиву doubleArray: " + min);
+            if (minDoubleElement > array[i]) {
+                minDoubleElement = array[i];
+                System.out.println("Мінімум з чисел масиву doubleArray: " + minDoubleElement);
             }
         }
     }
 
-    public void max(double[] array) {
 
-        double max = array[0];
-
+    public void printMaxOfArray(double[] array) {
+        double maxDoubleElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (max < array[i]) {
-
-                max = array[i];
-
+            if (maxDoubleElement < array[i]) {
+                maxDoubleElement = array[i];
             }
         }
-
-        System.out.println("Максимум з чисел масиву doubleArray: " + max);
-
+        System.out.println("Максимум з чисел масиву doubleArray: " + maxDoubleElement);
     }
 
 
-    public void maxPositive(int[] array) {
-
-        int max = array[1];
-
+    public void maxPositiveOfArray(int[] array) {
+        int maxPositiveIntegerElement = array[1];
         for (int i = 0; i < array.length; i++) {
-
-            if (max < array[i] && max > 0) {
-
-                max = array[i];
-
+            if (maxPositiveIntegerElement < array[i] && maxPositiveIntegerElement > 0) {
+                maxPositiveIntegerElement = array[i];
             }
-
         }
-
-        System.out.println("Максимальне додатнє з чисел масиву intArray: " + max);
-
+        if (maxPositiveIntegerElement < 0) {
+            System.out.println("Додатніх значень немає");
+        } else {
+            System.out.println("Максимальне додатнє з чисел масиву intArray: " + maxPositiveIntegerElement);
+        }
     }
 
-    public void maxPositive(double[] array) {
 
-        double max = array[1];
-
+    public void maxPositiveOfArray(double[] array) {
+        double maxPositiveDoubleElement = array[1];
         for (int i = 0; i < array.length; i++) {
-
-            if (max < array[i] && max > 0) {
-
-                max = array[i];
-
+            if (maxPositiveDoubleElement < array[i] && maxPositiveDoubleElement > 0) {
+                maxPositiveDoubleElement = array[i];
             }
-
         }
-
-        System.out.println("Максимальне додатнє з чисел масиву doubleArray: " + max);
-
+        if (maxPositiveDoubleElement < 0) {
+            System.out.println("Додатніх значень немає");
+        } else {
+            System.out.println("Максимальне додатнє з чисел масиву doubleArray: " + maxPositiveDoubleElement);
+        }
     }
 
-    public void multiplication(int[] array) {
 
-        int mult = 1;
-
+    public void multiplicationOfArray(int[] array) {
+        int multResultOfIntegerArray = 1;
         for (int i = 0; i < array.length; i++) {
-
-            mult *= array[i];
-
+            multResultOfIntegerArray *= array[i];
         }
-        System.out.println("Добуток чисел масиву intArray: " + mult);
-
+        System.out.println("Добуток чисел масиву intArray: " + multResultOfIntegerArray);
     }
 
 
-    public void multiplication(double[] array) {
-
+    public void multiplicationOfArray(double[] array) {
         double mult = 1;
-
         for (int i = 0; i < array.length; i++) {
-
             mult *= array[i];
-
         }
         System.out.println("Добуток чисел масиву doubleArray: " + mult);
-
     }
 
-    public void modulus(int[] array) {
 
+    public void firstLastElementModulus(int[] array) {
         int first = array[0];
         int last = array[array.length - 1];
-
         System.out.println("Модуль першого числа масиву intArray: " + Math.abs(first));
         System.out.println("Модуль останнього числа масиву intArray: " + Math.abs(last));
-
     }
 
-    public void modulus(double[] array) {
 
+    public void firstLastElementModulus(double[] array) {
         double first = array[0];
         double last = array[array.length - 1];
-
         System.out.println("Модуль першого числа масиву doubleArray: " + Math.abs(first));
         System.out.println("Модуль останнього числа масиву doubleArray: " + Math.abs(last));
-
     }
 
-    public void secondLargest(int[] array) {
 
-        int largest = array[0];
-        int secondLargest = array[0];
-
+    public void secondLargestElementOfArray(int[] array) {
+        int largestElement = array[0];
+        int secondLargestElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (largest < array[i])
-
-            {
-                secondLargest = largest;
-
-                largest = array[i];
-
-            } else if (array[i] > secondLargest) {
-
-                array[i] = secondLargest;
-
+            if (largestElement < array[i]) {
+                secondLargestElement = largestElement;
+                largestElement = array[i];
+            } else {
+                if (array[i] > secondLargestElement) {
+                    array[i] = secondLargestElement;
+                }
             }
-
         }
-
-        System.out.println("Друге за величиною число масиву intArray: " + secondLargest);
-
+        System.out.println("Друге за величиною число масиву intArray: " + secondLargestElement);
     }
 
-    public void secondLargest(double[] array) {
 
-        double largest = array[0];
-        double secondLargest = array[0];
-
+    public void secondLargestElementOfArray(double[] array) {
+        double largestElement = array[0];
+        double secondLargestElement = array[0];
         for (int i = 0; i < array.length; i++) {
-
-            if (largest < array[i])
-
-            {
-                secondLargest = largest;
-
-                largest = array[i];
-
-            } else if (array[i] > secondLargest) {
-
-                array[i] = secondLargest;
-
+            if (largestElement < array[i]) {
+                secondLargestElement = largestElement;
+                largestElement = array[i];
+            } else {
+                if (array[i] > secondLargestElement) {
+                    array[i] = secondLargestElement;
+                }
             }
-
         }
-
-        System.out.println("Друге за величиною число масиву doubleArray: " + secondLargest);
-
+        System.out.println("Друге за величиною число масиву doubleArray: " + secondLargestElement);
     }
 
 }

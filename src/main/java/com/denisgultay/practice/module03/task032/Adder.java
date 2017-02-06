@@ -6,7 +6,7 @@ public class Adder extends Arithmetic {
     public boolean checkNumber(Integer a, Integer b) {
         if (a >= b) {
             System.out.println("true");
-       } else {
+        } else {
             System.out.println("false");
         }
         return false;

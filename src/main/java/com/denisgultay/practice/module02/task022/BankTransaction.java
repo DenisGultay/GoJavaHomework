@@ -12,8 +12,8 @@ public class BankTransaction {
     }
 
     public void singleTransaction(int balance, int withdrawal) {
-        double persentOfCommission = 0.05;
-        double commisionOfTransaction = withdrawal * persentOfCommission;
+        double valueOfCommission = 0.05;
+        double commisionOfTransaction = withdrawal * valueOfCommission;
         double newBalance = balance - withdrawal - commisionOfTransaction;
         if ((withdrawal + commisionOfTransaction) <= balance) {
             System.out.println("OK " + commisionOfTransaction + " " + newBalance);

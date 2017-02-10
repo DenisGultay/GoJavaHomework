@@ -1,25 +1,30 @@
 package com.denisgultay.practice.module03.task033;
 
+import javafx.scene.input.DataFormat;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.zip.DataFormatException;
 
 public class Solution {
 
     public static void main(String[] args) {
 
-        GregorianCalendar calendar = new GregorianCalendar(2016, 9, 1);
+        Date startDateOfCourse = new Date(1472710000000l);
 
         Course course1 = new Course();
-        course1.setStartDate(calendar);
-        Course course2 = new Course(calendar, "Denis");
+        course1.setStartDate(startDateOfCourse);
+        System.out.println();
+        Course course2 = new Course(startDateOfCourse, "Denis");
         Course course3 = new Course("Peter", 40, "Samanta");
         Course course4 = new Course();
         course4.setName("Pavlo");
         course4.setHoursDuration(50);
-        course4.setStartDate(calendar);
+        course4.setStartDate(startDateOfCourse);
         Course course5 = new Course();
-        course5.setStartDate(calendar);
+        course5.setStartDate(startDateOfCourse);
         course5.setName("Viktor");
         course5.setHoursDuration(45);
         course5.setTeacherName("Elvira");
@@ -35,10 +40,7 @@ public class Solution {
         SpecialStudent specialStudent2 = new SpecialStudent("Tribbiani", new Course[]{course1, course2});
         SpecialStudent specialStudent3 = new SpecialStudent(999888777666L);
 
-
     }
-
-
 }
 
 

@@ -6,16 +6,16 @@ import java.util.GregorianCalendar;
 
 public class Course {
 
-    private GregorianCalendar startDate;
+    private Date startDate;
     private String name;
     private int hoursDuration;
     private String teacherName;
 
-    public GregorianCalendar getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(GregorianCalendar startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
@@ -43,7 +43,7 @@ public class Course {
         this.teacherName = teacherName;
     }
 
-    public Course(GregorianCalendar startDate, String name) {
+    public Course(Date startDate, String name) {
         this.startDate = startDate;
         this.name = name;
     }

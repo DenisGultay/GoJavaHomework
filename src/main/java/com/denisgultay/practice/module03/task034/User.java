@@ -11,7 +11,7 @@ public class User {
 
     public static void main(String[] args) {
 
-        User userPiter = new User("Piter", 15000, 8, "Kyivstar", 7000, "UAH");
+        User userPiter = new User("Piter", 15000, 8, "Kyivstar", 7000, " UAH");
 //        userPiter.setCompanyName("GoIt");
         userPiter.paySalary();
         userPiter.withdrawlFromBalance(2500);
@@ -78,7 +78,7 @@ public class User {
 
     public void paySalary() {
         balance += salary;
-        System.out.println(getBalance());
+        System.out.println(getBalance() + getCurrency());
     }
 
     public void withdrawlFromBalance(int summOfWithdrawl) {
@@ -90,7 +90,7 @@ public class User {
         } else {
             balance -= (summOfWithdrawl + (summOfWithdrawl * valueOfCommisionMore1000));
         }
-        System.out.println(getBalance());
+        System.out.println(getBalance() + getCurrency());
     }
 
     public void companyNameLenght() {
@@ -99,6 +99,6 @@ public class User {
 
     public void monthIncreaser(int addMonth) {
         monthOfEmployment += addMonth;
-        System.out.println(monthOfEmployment);
+        System.out.println(getMonthOfEmployment());
     }
 }

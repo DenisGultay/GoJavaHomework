@@ -10,6 +10,9 @@ public class Arithmetic {
         Adder myAdder = new Adder();
         myAdder.checkNumber(197, 115);
         myAdder.checkNumber(26, 95);
+
+        System.out.println(myAdder.checkNumber(26, 95));   // для прикладу
+        System.out.println(myAdder.checkNumber(268, 26));//для прикладу
     }
 
 

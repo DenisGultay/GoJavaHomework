@@ -7,6 +7,8 @@ public class Arithmetic {
         Arithmetic myNumbers = new Arithmetic();
         myNumbers.addNumbers(95, 117);
 
+        System.out.println(myNumbers.addNumbers(45, 15)); // для прикладу
+
         Adder myAdder = new Adder();
         myAdder.checkNumber(197, 115);
         myAdder.checkNumber(26, 95);
@@ -17,8 +19,6 @@ public class Arithmetic {
 
 
     public int addNumbers(Integer a, Integer b) {
-        int sumOfNumbers = a + b;
-        System.out.println(sumOfNumbers);
-        return sumOfNumbers;
+        return a + b;
     }
 }

@@ -2,6 +2,9 @@ package com.denisgultay.practice.module03.task034;
 
 public class User {
 
+
+    private static final double VALUE_OF_COMMISION_LESS_1000 = 0.05;
+    private static final double VALUE_OF_COMMISION_MORE_1000 = 0.1;
     private String name;
     private int balance;
     private int monthOfEmployment;
@@ -11,12 +14,18 @@ public class User {
 
     public static void main(String[] args) {
 
-        User userPiter = new User("Piter", 15000, 8, "Kyivstar", 7000, " UAH");
-//        userPiter.setCompanyName("GoIt");
+        User userPiter = new User("Piter", 15000, 8, "Kyivstar", 7000, "UAH");
         userPiter.paySalary();
         userPiter.withdrawlFromBalance(2500);
         userPiter.companyNameLenght();
         userPiter.monthIncreaser(4);
+
+        User userDaniel = new User("Daniel", 7000, 4, "Google", 1000, "USD");
+        userDaniel.paySalary();
+        userDaniel.withdrawlFromBalance(7500);
+        userDaniel.companyNameLenght();
+        userDaniel.monthIncreaser(6);
+
     }
 
     public User(String name, int balance, int monthOfEmployment, String companyName, int salary, String currency) {
@@ -78,27 +87,34 @@ public class User {
 
     public void paySalary() {
         balance += salary;
-        System.out.println(getBalance() + getCurrency());
+        System.out.println("Отримано ЗП: " + salary + currency + ";" + " Баланс: " + balance + currency);
     }
+
 
     public void withdrawlFromBalance(int summOfWithdrawl) {
-        double valueOfCommisionLess1000 = 0.05;
-        double valueOfCommisionMore1000 = 0.1;
 
+        double currentPersent;
         if (summOfWithdrawl < 1000) {
-            balance -= (summOfWithdrawl + (summOfWithdrawl * valueOfCommisionLess1000));
+            currentPersent = summOfWithdrawl * VALUE_OF_COMMISION_LESS_1000;
         } else {
-            balance -= (summOfWithdrawl + (summOfWithdrawl * valueOfCommisionMore1000));
+            currentPersent = summOfWithdrawl * VALUE_OF_COMMISION_MORE_1000;
         }
-        System.out.println(getBalance() + getCurrency());
+        if ((summOfWithdrawl + currentPersent) < balance) {
+            balance -= (summOfWithdrawl + currentPersent);
+            System.out.println("Знято з рахунку: " + summOfWithdrawl + currency + ";" + " Баланс: " + balance + currency);
+        } else {
+            System.out.println("Недостатньо коштів");
+        }
     }
 
+
     public void companyNameLenght() {
-        System.out.println(companyName.length());
+        System.out.println("Довжина назви компанії: " + companyName.length() + " букв.");
     }
 
     public void monthIncreaser(int addMonth) {
+        System.out.print("Попередній стаж роботи в компанії " + companyName + " " + monthOfEmployment + "; ");
         monthOfEmployment += addMonth;
-        System.out.println(getMonthOfEmployment());
+        System.out.println("Загальний стаж роботи: " + monthOfEmployment);
     }
 }

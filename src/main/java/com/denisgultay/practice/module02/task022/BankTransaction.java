@@ -16,7 +16,7 @@ public class BankTransaction {
         double commisionOfTransaction = withdrawal * valueOfCommission;
         double newBalance = balance - withdrawal - commisionOfTransaction;
         if ((withdrawal + commisionOfTransaction) <= balance) {
-            System.out.println("OK " + commisionOfTransaction + " " + newBalance);
+            System.out.println("OK; " + "Комісія транзакції: " + commisionOfTransaction + " ; " + "Баланс: " + newBalance);
         } else {
             System.out.println("NO");
         }

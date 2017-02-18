@@ -6,7 +6,7 @@ public class USBank extends Bank {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
-    int getLimitOfWithdrawl() {
+    public int getLimitOfWithdrawl() {
         getCurrency();
         int limitOfWithdrawl = 0;
         if (getCurrency() == Currency.USD) {
@@ -17,7 +17,7 @@ public class USBank extends Bank {
         return limitOfWithdrawl;
     }
 
-    int getLimitOfFunding() {
+    public int getLimitOfFunding() {
         getCurrency();
         int limitOfFunding;
         if (getCurrency() == Currency.EUR) {
@@ -28,7 +28,7 @@ public class USBank extends Bank {
         return limitOfFunding;
     }
 
-    int getMonthlyRate() {
+    public int getMonthlyRate() {
         getCurrency();
         int valueOfRate;
         if (getCurrency() == Currency.USD) {
@@ -39,7 +39,7 @@ public class USBank extends Bank {
         return valueOfRate;
     }
 
-    int getCommission(int summ) {
+    public int getCommission(int summ) {
         getCurrency();
         int valueOfCommision;
         if (getCurrency() == Currency.USD && summ < 1000) {
@@ -59,8 +59,7 @@ public class USBank extends Bank {
     }
 
     @Override
-    double moneyPaidMonthlyForSalary() {
-        double moneyPaidMonthlyForSalary = getAvrSalaryOfEmployee() * getNumberOfEmployees();
+    public double moneyPaidMonthlyForSalary() {
         return super.moneyPaidMonthlyForSalary();
     }
 }

@@ -2,13 +2,13 @@ package com.denisgultay.practice.module04.task041;
 
 public abstract class Bank {
 
-   private long id;
-   private String bankCountry;
-   private Currency currency;
-   private int numberOfEmployees;
-   private double avrSalaryOfEmployee;
-   private long rating;
-   private long totalCapital;
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
     public long getId() {
         return id;
@@ -77,11 +77,16 @@ public abstract class Bank {
     }
 
     abstract int getLimitOfWithdrawl();
+
     abstract int getLimitOfFunding();
+
     abstract int getMonthlyRate();
+
     abstract int getCommission(int summ);
 
-    double moneyPaidMonthlyForSalary(){
-        return moneyPaidMonthlyForSalary();
+    double moneyPaidMonthlyForSalary() {
+        double summOfMoneyPaidForSalaryInMonth = numberOfEmployees * avrSalaryOfEmployee;
+        return summOfMoneyPaidForSalaryInMonth;
     }
+
 }

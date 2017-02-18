@@ -10,6 +10,34 @@ public class UserOfBank {
     private int salary;
     private Bank bank;
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setMonthsOfEmployment(int monthsOfEmployment) {
+        this.monthsOfEmployment = monthsOfEmployment;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
     public long getId() {
         return id;
     }
@@ -36,5 +64,16 @@ public class UserOfBank {
 
     public Bank getBank() {
         return bank;
+    }
+
+    @Override
+    public String toString() {
+        return name + " :" +
+                "id = " + id +
+                ", balance = " + balance +
+                ", monthsOfEmployment = " + monthsOfEmployment +
+                ", companyName = '" + companyName + '\'' +
+                ", salary = " + salary +
+                ", bank = " + bank;
     }
 }

@@ -1,4 +1,6 @@
-package com.denisgultay.practice.module04.task041;
+package com.denisgultay.practice.module04.task044;
+
+import com.denisgultay.practice.module04.task041.Bank;
 
 public class UserOfBank {
 

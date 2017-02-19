@@ -1,6 +1,11 @@
-package com.denisgultay.practice.module04;
+package com.denisgultay.practice.module04.task046;
 
-import com.denisgultay.practice.module04.task041.*;
+import com.denisgultay.practice.module04.task042.Currency;
+import com.denisgultay.practice.module04.task043.ChinaBank;
+import com.denisgultay.practice.module04.task043.EUBank;
+import com.denisgultay.practice.module04.task043.USBank;
+import com.denisgultay.practice.module04.task044.UserOfBank;
+import com.denisgultay.practice.module04.task045.BankSystemImplements;
 
 public class Main {
 
@@ -9,6 +14,8 @@ public class Main {
         EUBank raiffaizenBank = new EUBank(111111L, "Germany", Currency.EUR, 250, 1500.0, 150L, 15000000L);
         USBank bankOfAmerica = new USBank(333333L, "USA", Currency.USD, 350, 2100.0, 110l, 18000000L);
         ChinaBank bankOfChina = new ChinaBank(444444L, "China", Currency.USD, 500, 1300, 250l, 25000000L);
+
+        BankSystemImplements user = new BankSystemImplements();
 
         UserOfBank newUser1 = new UserOfBank();
         newUser1.setId(100001L);
@@ -64,15 +71,47 @@ public class Main {
         newUser6.setSalary(1600);
         newUser6.setBank(bankOfChina);
 
-        System.out.println(raiffaizenBank.getLimitOfWithdrawl());
-        System.out.println(bankOfAmerica.getCommission(2500));
-        System.out.println(bankOfChina.getLimitOfFunding());
-        System.out.println(raiffaizenBank.moneyPaidMonthlyForSalary());
-        System.out.println("user1 = " + newUser1);
+        user.withdrawOfUser(newUser1, 300);
+        user.fundUser(newUser1, 250);
+        user.transferMoney(newUser1, newUser2, 400);
+        user.paySalary(newUser1);
 
+        System.out.println();
+
+        user.withdrawOfUser(newUser2, 2000);
+        user.fundUser(newUser2, 13500);
+        user.transferMoney(newUser2, newUser3, 250);
+        user.paySalary(newUser2);
+
+        System.out.println();
+
+        user.withdrawOfUser(newUser3, 1500);
+        user.fundUser(newUser3, 3500);
+        user.transferMoney(newUser3, newUser5, 450);
+        user.paySalary(newUser3);
+
+        System.out.println();
+
+        user.withdrawOfUser(newUser4, 22000);
+        user.fundUser(newUser4, 500);
+        user.transferMoney(newUser4, newUser1, 2500);
+        user.paySalary(newUser4);
+
+        System.out.println();
+
+        user.withdrawOfUser(newUser5, 4500);
+        user.fundUser(newUser5, 3500);
+        user.transferMoney(newUser5, newUser6, 500);
+        user.paySalary(newUser5);
+
+        System.out.println();
+
+        user.withdrawOfUser(newUser6, 500);
+        user.fundUser(newUser6, 1000);
+        user.transferMoney(newUser6, newUser2, 300);
+        user.paySalary(newUser6);
 
     }
-
 }
 
 

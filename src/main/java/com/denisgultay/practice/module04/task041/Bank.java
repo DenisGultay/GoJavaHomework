@@ -1,5 +1,7 @@
 package com.denisgultay.practice.module04.task041;
 
+import com.denisgultay.practice.module04.task042.Currency;
+
 public abstract class Bank {
 
     private long id;
@@ -76,15 +78,15 @@ public abstract class Bank {
         this.totalCapital = totalCapital;
     }
 
-    abstract int getLimitOfWithdrawl();
+    public abstract int getLimitOfWithdrawl();
 
-    abstract int getLimitOfFunding();
+    public abstract int getLimitOfFunding();
 
-    abstract int getMonthlyRate();
+    public abstract int getMonthlyRate();
 
-    abstract int getCommission(int summ);
+    public abstract int getCommission(int summ);
 
-    double moneyPaidMonthlyForSalary() {
+    public double moneyPaidMonthlyForSalary() {
         double summOfMoneyPaidForSalaryInMonth = numberOfEmployees * avrSalaryOfEmployee;
         return summOfMoneyPaidForSalaryInMonth;
     }

@@ -1,31 +1,32 @@
-package com.denisgultay.practice.module04.task041;
+package com.denisgultay.practice.module04.task043;
 
-public class EUBank extends Bank {
+import com.denisgultay.practice.module04.task041.Bank;
+import com.denisgultay.practice.module04.task042.Currency;
 
-    public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+public class USBank extends Bank {
+
+    public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
-
 
     public int getLimitOfWithdrawl() {
         getCurrency();
         int limitOfWithdrawl = 0;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawl = 2000;
+            limitOfWithdrawl = 1000;
         } else {
-            limitOfWithdrawl = 2200;
+            limitOfWithdrawl = 1200;
         }
         return limitOfWithdrawl;
     }
 
-
     public int getLimitOfFunding() {
         getCurrency();
         int limitOfFunding;
-        if (getCurrency() == Currency.USD) {
+        if (getCurrency() == Currency.EUR) {
             limitOfFunding = 10000;
         } else {
-            limitOfFunding = 20000;
+            limitOfFunding = 0;
         }
         return limitOfFunding;
     }
@@ -34,9 +35,9 @@ public class EUBank extends Bank {
         getCurrency();
         int valueOfRate;
         if (getCurrency() == Currency.USD) {
-            valueOfRate = 0;
-        } else {
             valueOfRate = 1;
+        } else {
+            valueOfRate = 2;
         }
         return valueOfRate;
     }
@@ -51,9 +52,9 @@ public class EUBank extends Bank {
                 valueOfCommision = 7;
             } else {
                 if (getCurrency() == Currency.EUR && summ < 1000) {
-                    valueOfCommision = 2;
+                    valueOfCommision = 6;
                 } else {
-                    valueOfCommision = 4;
+                    valueOfCommision = 8;
                 }
             }
         }
@@ -64,7 +65,4 @@ public class EUBank extends Bank {
     public double moneyPaidMonthlyForSalary() {
         return super.moneyPaidMonthlyForSalary();
     }
-
-
 }
-

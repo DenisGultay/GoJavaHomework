@@ -1,8 +1,11 @@
-package com.denisgultay.practice.module04.task041;
+package com.denisgultay.practice.module04.task043;
 
-public class USBank extends Bank {
+import com.denisgultay.practice.module04.task041.Bank;
+import com.denisgultay.practice.module04.task042.Currency;
 
-    public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+public class ChinaBank extends Bank {
+
+    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
@@ -10,9 +13,9 @@ public class USBank extends Bank {
         getCurrency();
         int limitOfWithdrawl = 0;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawl = 1000;
+            limitOfWithdrawl = 100;
         } else {
-            limitOfWithdrawl = 1200;
+            limitOfWithdrawl = 150;
         }
         return limitOfWithdrawl;
     }
@@ -20,10 +23,10 @@ public class USBank extends Bank {
     public int getLimitOfFunding() {
         getCurrency();
         int limitOfFunding;
-        if (getCurrency() == Currency.EUR) {
+        if (getCurrency() == Currency.USD) {
             limitOfFunding = 10000;
         } else {
-            limitOfFunding = 0;
+            limitOfFunding = 5000;
         }
         return limitOfFunding;
     }
@@ -34,7 +37,7 @@ public class USBank extends Bank {
         if (getCurrency() == Currency.USD) {
             valueOfRate = 1;
         } else {
-            valueOfRate = 2;
+            valueOfRate = 0;
         }
         return valueOfRate;
     }
@@ -43,15 +46,15 @@ public class USBank extends Bank {
         getCurrency();
         int valueOfCommision;
         if (getCurrency() == Currency.USD && summ < 1000) {
-            valueOfCommision = 5;
+            valueOfCommision = 3;
         } else {
             if (getCurrency() == Currency.USD && summ > 1000) {
-                valueOfCommision = 7;
+                valueOfCommision = 5;
             } else {
                 if (getCurrency() == Currency.EUR && summ < 1000) {
-                    valueOfCommision = 6;
+                    valueOfCommision = 10;
                 } else {
-                    valueOfCommision = 8;
+                    valueOfCommision = 11;
                 }
             }
         }

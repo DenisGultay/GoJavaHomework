@@ -1,21 +1,26 @@
-package com.denisgultay.practice.module04.task041;
+package com.denisgultay.practice.module04.task043;
 
-public class ChinaBank extends Bank {
+import com.denisgultay.practice.module04.task041.Bank;
+import com.denisgultay.practice.module04.task042.Currency;
 
-    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+public class EUBank extends Bank {
+
+    public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
+
 
     public int getLimitOfWithdrawl() {
         getCurrency();
         int limitOfWithdrawl = 0;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawl = 100;
+            limitOfWithdrawl = 2000;
         } else {
-            limitOfWithdrawl = 150;
+            limitOfWithdrawl = 2200;
         }
         return limitOfWithdrawl;
     }
+
 
     public int getLimitOfFunding() {
         getCurrency();
@@ -23,7 +28,7 @@ public class ChinaBank extends Bank {
         if (getCurrency() == Currency.USD) {
             limitOfFunding = 10000;
         } else {
-            limitOfFunding = 5000;
+            limitOfFunding = 20000;
         }
         return limitOfFunding;
     }
@@ -32,9 +37,9 @@ public class ChinaBank extends Bank {
         getCurrency();
         int valueOfRate;
         if (getCurrency() == Currency.USD) {
-            valueOfRate = 1;
-        } else {
             valueOfRate = 0;
+        } else {
+            valueOfRate = 1;
         }
         return valueOfRate;
     }
@@ -43,15 +48,15 @@ public class ChinaBank extends Bank {
         getCurrency();
         int valueOfCommision;
         if (getCurrency() == Currency.USD && summ < 1000) {
-            valueOfCommision = 3;
+            valueOfCommision = 5;
         } else {
             if (getCurrency() == Currency.USD && summ > 1000) {
-                valueOfCommision = 5;
+                valueOfCommision = 7;
             } else {
                 if (getCurrency() == Currency.EUR && summ < 1000) {
-                    valueOfCommision = 10;
+                    valueOfCommision = 2;
                 } else {
-                    valueOfCommision = 11;
+                    valueOfCommision = 4;
                 }
             }
         }
@@ -62,4 +67,7 @@ public class ChinaBank extends Bank {
     public double moneyPaidMonthlyForSalary() {
         return super.moneyPaidMonthlyForSalary();
     }
+
+
 }
+

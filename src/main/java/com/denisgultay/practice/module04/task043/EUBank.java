@@ -5,65 +5,72 @@ import com.denisgultay.practice.module04.task042.Currency;
 
 public class EUBank extends Bank {
 
+    final int LIMIT_OF_WITHDRAWAL_USD = 2000;
+    final int LIMIT_OF_WITHDRAWAL_EUR = 2200;
+    final int LIMIT_OF_FUNDING_USD = 10000;
+    final int LIMIT_OF_FUNDING_EUR = 20000;
+    final int VALUE_OF_RATE_USD = 0;
+    final int VALUE_OF_RATE_EUR = 1;
+    final int SUMM_FOR_CHANGE_COMMISION = 1000;
+    final int VALUE_OF_COMMISION_USD_LESS_1000 = 5;
+    final int VALUE_OF_COMMISION_USD_MORE_1000 = 7;
+    final int VALUE_OF_COMMISION_EUR_LESS_1000 = 2;
+    final int VALUE_OF_COMMISION_EUR_MORE_1000 = 4;
+
     public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
 
     public int getLimitOfWithdrawl() {
-        getCurrency();
-        int limitOfWithdrawl = 0;
+        int limitOfWithdrawl;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawl = 2000;
+            limitOfWithdrawl = LIMIT_OF_WITHDRAWAL_USD;
         } else {
-            limitOfWithdrawl = 2200;
+            limitOfWithdrawl = LIMIT_OF_WITHDRAWAL_EUR;
         }
         return limitOfWithdrawl;
     }
 
 
     public int getLimitOfFunding() {
-        getCurrency();
         int limitOfFunding;
         if (getCurrency() == Currency.USD) {
-            limitOfFunding = 10000;
+            limitOfFunding = LIMIT_OF_FUNDING_USD;
         } else {
-            limitOfFunding = 20000;
+            limitOfFunding = LIMIT_OF_FUNDING_EUR;
         }
         return limitOfFunding;
     }
 
     public int getMonthlyRate() {
-        getCurrency();
         int valueOfRate;
         if (getCurrency() == Currency.USD) {
-            valueOfRate = 0;
+            valueOfRate = VALUE_OF_RATE_USD;
         } else {
-            valueOfRate = 1;
+            valueOfRate = VALUE_OF_RATE_EUR;
         }
         return valueOfRate;
     }
 
     public int getCommission(int summ) {
-        getCurrency();
         int valueOfCommision;
-        if (getCurrency() == Currency.USD && summ < 1000) {
-            valueOfCommision = 5;
+        if (getCurrency() == Currency.USD && summ < SUMM_FOR_CHANGE_COMMISION) {
+            valueOfCommision = VALUE_OF_COMMISION_USD_LESS_1000;
         } else {
-            if (getCurrency() == Currency.USD && summ > 1000) {
-                valueOfCommision = 7;
+            if (getCurrency() == Currency.USD && summ > SUMM_FOR_CHANGE_COMMISION) {
+                valueOfCommision = VALUE_OF_COMMISION_USD_MORE_1000;
             } else {
-                if (getCurrency() == Currency.EUR && summ < 1000) {
-                    valueOfCommision = 2;
+                if (getCurrency() == Currency.EUR && summ < SUMM_FOR_CHANGE_COMMISION) {
+                    valueOfCommision = VALUE_OF_COMMISION_EUR_LESS_1000;
                 } else {
-                    valueOfCommision = 4;
+                    valueOfCommision = VALUE_OF_COMMISION_EUR_MORE_1000;
                 }
             }
         }
         return valueOfCommision;
     }
 
-    @Override
     public double moneyPaidMonthlyForSalary() {
         return super.moneyPaidMonthlyForSalary();
     }

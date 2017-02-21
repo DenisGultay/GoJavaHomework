@@ -54,17 +54,17 @@ public class ChinaBank extends Bank {
 
     public int getCommission(int summ) {
         int valueOfCommision;
-        if (getCurrency() == Currency.USD && summ < SUMM_FOR_CHANGE_COMMISION) {
-            valueOfCommision = VALUE_OF_COMMISION_USD_LESS_1000;
+        if (summ < SUMM_FOR_CHANGE_COMMISION) {
+            if (getCurrency() == Currency.USD) {
+                valueOfCommision = VALUE_OF_COMMISION_USD_LESS_1000;
+            } else {
+                valueOfCommision = VALUE_OF_COMMISION_EUR_LESS_1000;
+            }
         } else {
-            if (getCurrency() == Currency.USD && summ > SUMM_FOR_CHANGE_COMMISION) {
+            if (getCurrency() == Currency.USD) {
                 valueOfCommision = VALUE_OF_COMMISION_USD_MORE_1000;
             } else {
-                if (getCurrency() == Currency.EUR && summ < SUMM_FOR_CHANGE_COMMISION) {
-                    valueOfCommision = VALUE_OF_COMMISION_EUR_LESS_1000;
-                } else {
-                    valueOfCommision = VALUE_OF_COMMISION_EUR_MORE_1000;
-                }
+                valueOfCommision = VALUE_OF_COMMISION_EUR_MORE_1000;
             }
         }
         return valueOfCommision;

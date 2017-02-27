@@ -1,5 +1,7 @@
 package com.denisgultay.practice.module05;
 
+import com.denisgultay.practice.module05.task051.Room;
+
 public interface RoomDAO {
 
     Room save(Room room);

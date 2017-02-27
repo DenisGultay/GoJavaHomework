@@ -1,8 +1,10 @@
 package com.denisgultay.practice.module05;
 
+import com.denisgultay.practice.module05.task051.Room;
+
 public class RoomDAOImplements implements RoomDAO {
 
-    Room [] roomsBase;
+    Room[] roomsBase;
 
     public Room save(Room room) {
         int count = getRoomsNumber(roomsBase);

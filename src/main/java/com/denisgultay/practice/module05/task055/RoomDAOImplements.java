@@ -9,6 +9,7 @@ public class RoomDAOImplements implements RoomDAO {
     public Room save(Room room) {
         int count = getRoomsNumber(roomsBase);
         roomsBase [count] = room;
+        System.out.println(room + "was saved");
         return room;
     }
 
@@ -28,6 +29,7 @@ public class RoomDAOImplements implements RoomDAO {
             if (room.equals(roomInBase)){
                 System.arraycopy(roomsBase, i+1, roomsBase, i, roomsBase.length-i-1);
             roomsBase[roomsBase.length-1] = null;
+                System.out.println(roomsBase[i] + "was deleted");
             }
         }
         return true;

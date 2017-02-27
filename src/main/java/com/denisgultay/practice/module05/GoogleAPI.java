@@ -1,8 +1,17 @@
 package com.denisgultay.practice.module05;
 
-public class GoogleAPI implements  RoomAPI {
+public class GoogleAPI implements RoomAPI {
 
     public Room findRooms(int price, int persons, String city, String hotel) {
-        return new Room[0];
+
+        for (int i = 0; i < roomsBase.length; i++) {
+            Room room = null;
+            if (room != null && room.equals(roomsBase[i])) {
+
+                return roomsBase[i];
+            }
+        }
+        return null;
+
     }
 }

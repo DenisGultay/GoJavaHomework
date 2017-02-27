@@ -1,6 +1,7 @@
-package com.denisgultay.practice.module05;
+package com.denisgultay.practice.module05.task054;
 
-import com.denisgultay.practice.module05.task051.Room;
+import com.denisgultay.practice.module05.task051_052.Room;
+import com.denisgultay.practice.module05.task053.RoomAPI;
 
 public class GoogleAPI implements RoomAPI {
 
@@ -14,6 +15,5 @@ public class GoogleAPI implements RoomAPI {
             }
         }
         return null;
-
     }
 }

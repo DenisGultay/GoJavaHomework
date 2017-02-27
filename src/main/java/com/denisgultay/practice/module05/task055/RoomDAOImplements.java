@@ -1,6 +1,6 @@
-package com.denisgultay.practice.module05;
+package com.denisgultay.practice.module05.task055;
 
-import com.denisgultay.practice.module05.task051.Room;
+import com.denisgultay.practice.module05.task051_052.Room;
 
 public class RoomDAOImplements implements RoomDAO {
 
@@ -36,10 +36,17 @@ public class RoomDAOImplements implements RoomDAO {
     public Room update(Room room) {
 
 
+
+
         return null;
     }
 
     public Room findById(long id) {
+        for (Room room: roomsBase) {
+           if (room!=null && room.getId() == id){
+               return room;
+           }
+        }
         return null;
     }
 }

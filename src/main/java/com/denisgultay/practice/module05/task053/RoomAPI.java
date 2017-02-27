@@ -1,6 +1,6 @@
-package com.denisgultay.practice.module05;
+package com.denisgultay.practice.module05.task053;
 
-import com.denisgultay.practice.module05.task051.Room;
+import com.denisgultay.practice.module05.task051_052.Room;
 
 public interface RoomAPI {
 

@@ -61,8 +61,6 @@ public class Room {
         this.cityName = cityName;
     }
 
-    public Room() {
-    }
 
     public Room(long id, int price, int persons, String hotelName, String cityName) {
         this.id = id;

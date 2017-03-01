@@ -9,10 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Room[] roomsBase = new Room[5];
-
-
-
+    BookingComAPI bookingComAPI = new BookingComAPI();
 
     }
 }

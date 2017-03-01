@@ -22,15 +22,13 @@ public class BookingComAPI implements RoomAPI {
     }
 
 
-    public Room findRooms(int price, int persons, String city, String hotel) {
-
+    public Room[] findRooms(int price, int persons, String city, String hotel) {
+       Room[] rooms = new Room[5];
         for (int i = 0; i < roomsBase.length ; i++) {
-            Room room = null;
-            if (room != null && room.equals(roomsBase[i])) {
-
-                return roomsBase[i];
+            if (rooms.equals(roomsBase[i])){
+               rooms[i] = roomsBase[i];
             }
         }
-        return null;
+        return new Room[5];
     }
 }

@@ -6,6 +6,21 @@ import com.denisgultay.practice.module05.task053.RoomAPI;
 
 public class TripAdvisorAPI implements RoomAPI {
 
+   public Room[] roomsBase;
+
+   public TripAdvisorAPI(){
+       Room trAdRoom1 = new Room(11,200,3, "Geneva", "Truskavec");
+       Room trAdRoom2 = new Room(12,300,2, "Polonuna", "Jaremche");
+       Room trAdRoom3 = new Room(13,300,2, "Bukovel-hotel", "Bukovel");
+       Room trAdRoom4 = new Room(14,400,2, "Kosino-hotel", "Kosino");
+       Room trAdRoom5 = new Room(15,400,3, "Vlasta", "Lviv");
+
+       roomsBase[0] = trAdRoom1;
+       roomsBase[1] = trAdRoom2;
+       roomsBase[2] = trAdRoom3;
+       roomsBase[3] = trAdRoom4;
+       roomsBase[4] = trAdRoom5;
+   }
 
     public Room findRooms(int price, int persons, String city, String hotel) {
 

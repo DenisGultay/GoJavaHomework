@@ -37,10 +37,8 @@ public class RoomDAOImplements implements RoomDAO {
 
     public Room update(Room room) {
 
-
-
-
-        return null;
+        System.out.println("Room: " + room.getId() + " " + "was updated");
+        return room;
     }
 
     public Room findById(long id) {

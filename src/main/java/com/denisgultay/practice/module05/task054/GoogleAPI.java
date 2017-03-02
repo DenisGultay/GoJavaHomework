@@ -5,7 +5,7 @@ import com.denisgultay.practice.module05.task053.RoomAPI;
 
 public class GoogleAPI implements RoomAPI {
 
-    public Room[] roomsBase;
+    public Room[] roomsBase = new Room[5];
 
     public GoogleAPI() {
         Room googleRoom1 = new Room(6,200,3, "Karpaty", "Stryi");

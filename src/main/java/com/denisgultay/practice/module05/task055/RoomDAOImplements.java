@@ -28,7 +28,7 @@ public class RoomDAOImplements implements RoomDAO {
             Room roomInBase = roomsBase[i];
             if (room.equals(roomInBase)){
                 System.arraycopy(roomsBase, i+1, roomsBase, i, roomsBase.length-i-1);
-            roomsBase[roomsBase.length-1] = null;
+                roomsBase[roomsBase.length-1] = null;
                 System.out.println(roomsBase[i] + "was deleted");
             }
         }
@@ -43,9 +43,9 @@ public class RoomDAOImplements implements RoomDAO {
 
     public Room findById(long id) {
         for (Room room: roomsBase) {
-           if (room!=null && room.getId() == id){
-               return room;
-           }
+            if (room!=null && room.getId() == id){
+                return room;
+            }
         }
         return null;
     }

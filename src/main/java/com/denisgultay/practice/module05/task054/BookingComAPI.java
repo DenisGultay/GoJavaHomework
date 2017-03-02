@@ -3,9 +3,12 @@ package com.denisgultay.practice.module05.task054;
 import com.denisgultay.practice.module05.task051_052.Room;
 import com.denisgultay.practice.module05.task053.RoomAPI;
 
+import java.util.Arrays;
+
 public class BookingComAPI implements RoomAPI {
 
     public Room[] roomsBase = new Room[5];
+
 
     public BookingComAPI() {
         Room bComRoom1 = new Room(1, 100, 1, "Lviv-Hotel", "Lviv");
@@ -30,7 +33,7 @@ public class BookingComAPI implements RoomAPI {
             if (rooms[i] == null) {
 
             } else {
-                System.out.println(rooms[i]);
+   //             System.out.println(rooms[i]);
             }
         }
         return new Room[5];

@@ -18,27 +18,25 @@ public class Controller {
         apis[2] = new TripAdvisorAPI();
     }
 
-    }
-/*  public Room[] requstRooms(int price, int persons, String city, String hotel) {
+    public Room[] requstRooms(int price, int persons, String city, String hotel) {
 
         for (int i = 0; i < apis.length; i++) {
-             if (apis[1].findRooms(200, 2, "Stryi","Perlyna") != null) {
-                 int count= 0;
-                 Room [] requstRoomsArray = new Room[count];
-             }
-             if (apis[2].findRooms(200, 2, "Stryi","Perlyna") != null) {
-                 if ()
-             }
-
+            if (apis[1].findRooms(200, 2, "Stryi", "Perlyna") != null) {
+                int count = 0;
+                Room[] requstRoomsArray = new Room[count];
+            }
+            if (apis[2].findRooms(200, 2, "Stryi", "Perlyna") != null) {
             }
 
         }
-
         return new Room[5];
     }
-
-*/
 }
+
+
+
+
+
 
 
 

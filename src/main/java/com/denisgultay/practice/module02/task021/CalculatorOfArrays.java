@@ -1,5 +1,7 @@
 package com.denisgultay.practice.module02.task021;
 
+import com.denisgultay.practice.module06.task061.ArraysUtils;
+
 /**
  * Created by Користувач on 31.01.2017.
  */
@@ -11,7 +13,7 @@ public class CalculatorOfArrays {
         double[] doubleArray = {-1.2, 3.1, -0.5, 1.7, 5.5, 2.5, 0.7, 1.1, 1.3, -3.5};
 
         CalculatorOfArrays array = new CalculatorOfArrays();
-
+/*
         array.printSumOfArray(intArray);
         array.printSumOfArray(doubleArray);
         array.printMinOfArray(intArray);
@@ -27,6 +29,11 @@ public class CalculatorOfArrays {
         array.secondLargestElementOfArray(intArray);
         array.secondLargestElementOfArray(doubleArray);
         array.maxPositiveOfArray(new int[]{-2, -3, -10});
+*/
+        ArraysUtils exampleArray = new ArraysUtils();
+       exampleArray.findEvenElements(new int[]{1,2,3,1,5,4,1,8,9,1});
+
+
     }
 
 

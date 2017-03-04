@@ -88,28 +88,28 @@ public final class ArraysUtils {
         return secondLargestElement;
     }
 
-    public int[] reverse(int[] array){
-        for (int i = array.length-1; i>1 ; i--) {
-            System.out.println(array[i]);
-            }
+    public int[] reverse(int[] array) {
+        for (int i = array.length-1; i >= 0; i--) {
+            System.out.println(array[i] + "");
+        }
         return array;
     }
 
-   public int[] findEvenElements(int[] array){
-        int [] evenElementsMassiv= new int[array.length];
-       for (int j = 0; j <evenElementsMassiv.length ; ++j) {
+    public int[] findEvenElements(int[] array) {
+        int[] evenElementsMassiv = new int[array.length];
+        int count =0;
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] % 2 == 0) {
+                evenElementsMassiv[count] = array[j];
+                System.out.println(evenElementsMassiv[count]);
+                count++;
+            }
 
-       for (int i = 0; i <array.length ; ++i) {
-           int valueOfElement;
-           valueOfElement = array[i];
-           if (valueOfElement != array[i]) {
-               valueOfElement = 0;
-           } else {
-                   evenElementsMassiv[j] = valueOfElement;
-               }
-           }
-           System.out.println(evenElementsMassiv[j]);
-       }
+        }
         return evenElementsMassiv;
-   }
+    }
+
+
 }
+
+

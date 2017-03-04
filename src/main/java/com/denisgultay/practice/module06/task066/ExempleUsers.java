@@ -9,12 +9,13 @@ public class ExempleUsers {
 
         User [] users = new User[3];
 
-        users[0] = new User(00001L,"Denis", "Gultay", 4000, 5000);
-        users[1] = new User(00002L,"David", "Beckham", 44000, 150000);
-        users[2] = new User(00003L,"Oksana", "Gultay", 5000, 5000);
+        users[0] = new User(1L,"Denis", "Gultay", 4000, 5000);
+        users[1] = new User(2L,"David", "Beckham", 44000, 150000);
+        users[2] = new User(3L,"Oksana", "Gultay", 5000, 5000);
 
         UserUtils userUtils = new UserUtils();
-        userUtils.usersWithContitionalBalance(users, 5000);
+     //   userUtils.usersWithContitionalBalance(users, 5000);
+        userUtils.paySalaryToUsers(users);
 
 
     }

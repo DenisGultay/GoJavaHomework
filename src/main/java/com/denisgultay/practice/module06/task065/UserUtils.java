@@ -10,31 +10,40 @@ public class UserUtils {
  //   }
    public User[] usersWithContitionalBalance(User[] users, int balance) {
         User[] contitionalBalanceUsers = new User[users.length];
+        int count =0;
         for (int i = 0; i < contitionalBalanceUsers.length; i++) {
-
-            for (int j = 0; j < users.length; j++) {
-                if (balance == users[j].getBalance()) {
-                    contitionalBalanceUsers[i] = users[j];
-                    System.out.println(users[j].toString());
+                if (balance == users[i].getBalance()) {
+                    contitionalBalanceUsers[count] = users[i];
+                    System.out.println(users[i].getFirstName() + " " + users[i].getLastName() + " " + users[i].getBalance());
                 }
-
             }
-
-        }
-
         return contitionalBalanceUsers;
     }
 
- /*   //user’s balance == balance
-    User[] paySalaryToUsers(User[] users) {
+    public User[] paySalaryToUsers(User[] users) {
+       int newBalance;
+        for (int i = 0; i < users.length; i++) {
+            newBalance = users[i].getBalance() + users[i].getSalary();
+            users[i].setBalance(newBalance);
+            System.out.println(users[i].getFirstName() + " " + users[i].getBalance());
+        }
+        return users;
     }
 
-    long[] getUsersId(User[] users) {
+    public long[] getUsersId(User[] users) {
+       long[] usersId = new long[users.length];
+       int count =0;
+        for (int i = 0; i < users.length; i++) {
+         usersId[count] = users[i].getId();
+            System.out.println(usersId[count]);
+         count++;
+        }
+        return usersId;
     }
 
-    User[] deleteEmptyUsers(User[] users) {
+ //   User[] deleteEmptyUsers(User[] users) {
 
-   }
-*/
+  // }
+
 }
 

@@ -31,7 +31,7 @@ public class CalculatorOfArrays {
         array.maxPositiveOfArray(new int[]{-2, -3, -10});
 */
         ArraysUtils exampleArray = new ArraysUtils();
-       exampleArray.reverse(new int[]{1,2,3,4,5,6,7,8,9,10});
+       exampleArray.findEvenElements(new int[]{1,2,3,4,5,6,7,8,9,10});
 
     }
 

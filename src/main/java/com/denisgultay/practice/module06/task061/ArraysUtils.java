@@ -1,8 +1,10 @@
 package com.denisgultay.practice.module06.task061;
 
+import java.util.Arrays;
+
 public final class ArraysUtils {
 
-    public int printSumOfArray(int[] array) {
+    public static final int printSumOfArray(int[] array) {
         int resultSumOfIntegerArray = 0;
         for (int i = 0; i < array.length; i++) {
             resultSumOfIntegerArray += array[i];
@@ -12,7 +14,7 @@ public final class ArraysUtils {
     }
 
 
-    public int printMinOfArray(int[] array) {
+    public static final int printMinOfArray(int[] array) {
         int minIntegerElement = array[0];
         for (int i = 0; i < array.length; i++) {
             if (minIntegerElement > array[i]) {
@@ -24,7 +26,7 @@ public final class ArraysUtils {
     }
 
 
-    public int printMaxOfArray(int[] array) {
+    public static final int printMaxOfArray(int[] array) {
         int maxIntegerElement = array[0];
         for (int i = 0; i < array.length; i++) {
             if (maxIntegerElement < array[i]) {
@@ -36,7 +38,7 @@ public final class ArraysUtils {
     }
 
 
-    public int maxPositiveOfArray(int[] array) {
+    public static final int maxPositiveOfArray(int[] array) {
         int maxPositiveIntegerElement = array[1];
         for (int i = 0; i < array.length; i++) {
             if (maxPositiveIntegerElement < array[i] && maxPositiveIntegerElement > 0) {
@@ -52,7 +54,7 @@ public final class ArraysUtils {
     }
 
 
-    public int multiplicationOfArray(int[] array) {
+    public static final int multiplicationOfArray(int[] array) {
         int multResultOfIntegerArray = 1;
         for (int i = 0; i < array.length; i++) {
             multResultOfIntegerArray *= array[i];
@@ -62,7 +64,7 @@ public final class ArraysUtils {
     }
 
 
-    public int firstLastElementModulus(int[] array) {
+    public static final int firstLastElementModulus(int[] array) {
         int first = array[0];
         int last = array[array.length - 1];
         System.out.println("Модуль першого числа масиву intArray: " + Math.abs(first));
@@ -71,7 +73,7 @@ public final class ArraysUtils {
     }
 
 
-    public int secondLargestElementOfArray(int[] array) {
+    public static final int secondLargestElementOfArray(int[] array) {
         int largestElement = array[0];
         int secondLargestElement = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -88,28 +90,25 @@ public final class ArraysUtils {
         return secondLargestElement;
     }
 
-    public int[] reverse(int[] array) {
-        for (int i = array.length-1; i >= 0; i--) {
-            System.out.println(array[i] + "");
+    public static final int[] reverse(int[] array) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.println(array[i]);
         }
         return array;
     }
 
-    public int[] findEvenElements(int[] array) {
-        int[] evenElementsMassiv = new int[array.length];
-        int count =0;
+    public static final int[] findEvenElements(int[] array) {
+        int[] evenElementsArray = new int[array.length];
+        int count = 0;
         for (int j = 0; j < array.length; j++) {
             if (array[j] % 2 == 0) {
-                evenElementsMassiv[count] = array[j];
-                System.out.println(evenElementsMassiv[count]);
+                evenElementsArray[count] = array[j];
+                System.out.println(evenElementsArray[count]);
                 count++;
             }
-
         }
-        return evenElementsMassiv;
+        return evenElementsArray;
     }
-
-
 }
 
 

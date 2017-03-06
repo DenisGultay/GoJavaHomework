@@ -1,4 +1,4 @@
-package com.denisgultay.practice.module06.task064;
+package com.denisgultay.practice.module06.task062;
 
 public class User {
 

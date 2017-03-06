@@ -1,14 +1,14 @@
-package com.denisgultay.practice.module06.task065;
+package com.denisgultay.practice.module06.task063;
 
-import com.denisgultay.practice.module06.task064.User;
+import com.denisgultay.practice.module06.task062.User;
 
 import java.util.Arrays;
 
 public class UserUtils {
 
-    public static User[] users = new User[7];
+    public static User[] users = new User[10];
 
-    public static final User[] uniqueUsers(User[] users) {
+    public static User[] uniqueUsers(User[] users) {
         User[] uniqueUserArray = new User[users.length];
         int count = 0;
         for (int i = count + 1; i < users.length; i++) {
@@ -21,11 +21,11 @@ public class UserUtils {
         return uniqueUserArray;
     }
 
-    public static final User[] usersWithContitionalBalance(User[] users, int balance) {
+    public static User[] usersWithContitionalBalance(User[] users, int balance) {
         User[] contitionalBalanceUsers = new User[users.length];
         int count = 0;
         for (int i = 0; i < contitionalBalanceUsers.length; i++) {
-            if (balance == users[i].getBalance()) {
+            if (users[i] != null && balance == users[i].getBalance()) {
                 contitionalBalanceUsers[count] = users[i];
                 count++;
             }
@@ -38,28 +38,31 @@ public class UserUtils {
     public static final User[] paySalaryToUsers(User[] users) {
         int newBalance;
         for (int i = 0; i < users.length; i++) {
-            newBalance = users[i].getBalance() + users[i].getSalary();
-            users[i].setBalance(newBalance);
+            if (users[i] != null) {
+                newBalance = users[i].getBalance() + users[i].getSalary();
+                users[i].setBalance(newBalance);
+            }
         }
         String usersWithNewBalance = Arrays.toString(users);
         System.out.println(usersWithNewBalance);
         return users;
     }
 
-    public long[] getUsersId(User[] users) {
+    public static final long[] getUsersId(User[] users) {
         long[] usersId = new long[users.length];
         int count = 0;
         for (int i = 0; i < users.length; i++) {
-            usersId[count] = users[i].getId();
-            System.out.println(usersId[count]);
-            count++;
+            if (users[i] != null) {
+                usersId[count] = users[i].getId();
+                count++;
+            }
         }
         String printUsersId = Arrays.toString(usersId);
         System.out.println(printUsersId);
         return usersId;
     }
 
-   public User[] deleteEmptyUsers(User[] users) {
+    public static User[] deleteEmptyUsers(User[] users) {
         User[] notEmptyUsers = new User[users.length];
         int count = 0;
         for (int i = 0; i < users.length; i++) {

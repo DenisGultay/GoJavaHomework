@@ -92,7 +92,7 @@ public final class ArraysUtils {
 
     public static final int[] reverse(int[] array) {
         for (int i = array.length - 1; i >= 0; i--) {
-            System.out.print(array[i]+ " ");
+            System.out.print(array[i] + " ");
         }
         return array;
     }

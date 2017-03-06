@@ -92,7 +92,7 @@ public final class ArraysUtils {
 
     public static final int[] reverse(int[] array) {
         for (int i = array.length - 1; i >= 0; i--) {
-            System.out.println(array[i]);
+            System.out.print(array[i]+ " ");
         }
         return array;
     }
@@ -103,7 +103,7 @@ public final class ArraysUtils {
         for (int j = 0; j < array.length; j++) {
             if (array[j] % 2 == 0) {
                 evenElementsArray[count] = array[j];
-                System.out.println(evenElementsArray[count]);
+                System.out.print(evenElementsArray[count] + " ");
                 count++;
             }
         }

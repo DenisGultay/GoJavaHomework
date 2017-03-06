@@ -9,17 +9,15 @@ public class UserUtils {
     public static User[] users = new User[7];
 
     public static final User[] uniqueUsers(User[] users) {
-        User[] uniqueUserArray = new User[users.length-1];
+        User[] uniqueUserArray = new User[users.length];
         int count = 0;
-        for (int i = 0; i < users.length; i++) {
-            if (users[i].getFirstName().equals(users[i+1].getFirstName()) && users[i].getLastName().equals(users[i + 1].getLastName())) {
-                uniqueUserArray[count] = null;
-                count++;
-            } else {
+        for (int i = count + 1; i < users.length; i++) {
+            if (!(users[count].equals(users[i]))) {
                 uniqueUserArray[count] = users[i];
-                System.out.println(uniqueUserArray[i]);
+                System.out.println(uniqueUserArray[count]);
             }
         }
+        count++;
         return uniqueUserArray;
     }
 
@@ -61,9 +59,18 @@ public class UserUtils {
         return usersId;
     }
 
-    //   User[] deleteEmptyUsers(User[] users) {
-
-    // }
+   public User[] deleteEmptyUsers(User[] users) {
+        User[] notEmptyUsers = new User[users.length];
+        int count = 0;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null) {
+                notEmptyUsers[count] = users[i];
+                System.out.println(notEmptyUsers[count]);
+                count++;
+            }
+        }
+        return notEmptyUsers;
+    }
 
 }
 

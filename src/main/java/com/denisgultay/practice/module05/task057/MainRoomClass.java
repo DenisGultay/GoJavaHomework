@@ -15,7 +15,8 @@ public class MainRoomClass {
         TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
         Controller controller = new Controller();
 
-        System.out.println(controller.apis.toString());
+        controller.requstRooms(100,1,"Stryi", "Star");
+  //      System.out.println(bookingComAPI.findRooms(100, 1, "Stryi", "Star"));
     }
 }
 

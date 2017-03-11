@@ -20,16 +20,19 @@ public class Controller {
 
     public Room[] requstRooms(int price, int persons, String city, String hotel) {
 
-        for (int i = 0; i < apis.length; i++) {
-            if (apis[1].findRooms(200, 2, "Stryi", "Perlyna") != null) {
-                int count = 0;
-                Room[] requstRoomsArray = new Room[count];
-            }
-            if (apis[2].findRooms(200, 2, "Stryi", "Perlyna") != null) {
-            }
+        int apisLength0 = apis[0].findRooms(price, persons, city, hotel).length;
+        int apisLength1 = apis[1].findRooms(price, persons, city, hotel).length;
+        int apisLength2 = apis[2].findRooms(price, persons, city, hotel).length;
 
-        }
-        return new Room[5];
+        Room[] allRequestRooms = new Room[apis.length];
+        int count = 0;
+        System.arraycopy(apis[0].findRooms(price, persons, city, hotel), count, allRequestRooms, count, apisLength0-1);
+        System.arraycopy(apis[1].findRooms(price, persons, city, hotel), count, allRequestRooms, apisLength0, apisLength1);
+        System.arraycopy(apis[2].findRooms(price, persons, city, hotel), count, allRequestRooms, (apisLength0 + apisLength1), apisLength2);
+        System.out.println(allRequestRooms[count]);
+        count++;
+
+        return allRequestRooms;
     }
 }
 

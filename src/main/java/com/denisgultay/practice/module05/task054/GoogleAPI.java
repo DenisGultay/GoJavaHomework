@@ -9,7 +9,7 @@ public class GoogleAPI implements RoomAPI {
 
     public GoogleAPI() {
         Room googleRoom1 = new Room(6, 200, 2, "Karpaty", "Stryi");
-        Room googleRoom2 = new Room(7, 200, 1, "Nadiya", "Iv.- Frankivsk");
+        Room googleRoom2 = new Room(7, 100, 1, "Lviv-Hotel", "Lviv");
         Room googleRoom3 = new Room(8, 300, 2, "George", "Lviv");
         Room googleRoom4 = new Room(9, 300, 2, "Dnipro-hotel", "Dnipro");
         Room googleRoom5 = new Room(10, 400, 3, "Rixos", "Truskavec");
@@ -22,20 +22,19 @@ public class GoogleAPI implements RoomAPI {
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] rooms = new Room[5];
+        Room[] roomsByParameters = new Room[roomsBase.length];
+        int count = 0;
         for (int i = 0; i < roomsBase.length; i++) {
             if (price == roomsBase[i].getPrice() && persons == roomsBase[i].getPersons() && city == roomsBase[i].getCityName() && hotel == roomsBase[i].getHotelName())
-                rooms[i] = roomsBase[i];
-            if (rooms[i] == null) {
-
-            } else {
-                //             System.out.println(rooms[i]);
-            }
+                roomsByParameters[count] = roomsBase[i];
+  //          System.out.println(roomsByParameters[count]);
+            count++;
         }
-        return new Room[5];
+        return roomsByParameters;
     }
 
-    public Room[] getRooms() {
+    public Room[] getRooms(RoomAPI[] roomAPIS) {
         return new Room[0];
     }
+
 }

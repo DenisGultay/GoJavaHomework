@@ -11,7 +11,7 @@ public class TripAdvisorAPI implements RoomAPI {
         Room trAdRoom1 = new Room(11, 200, 3, "Geneva", "Truskavec");
         Room trAdRoom2 = new Room(12, 300, 2, "Polonuna", "Jaremche");
         Room trAdRoom3 = new Room(13, 300, 2, "Bukovel-hotel", "Bukovel");
-        Room trAdRoom4 = new Room(14, 400, 2, "Kosino-hotel", "Kosino");
+        Room trAdRoom4 = new Room(14, 100, 1, "Lviv-Hotel", "Lviv");
         Room trAdRoom5 = new Room(15, 400, 3, "Vlasta", "Lviv");
 
         roomsBase[0] = trAdRoom1;
@@ -23,20 +23,18 @@ public class TripAdvisorAPI implements RoomAPI {
 
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] rooms = new Room[5];
+        Room[] roomsByParameters = new Room[roomsBase.length];
+        int count = 0;
         for (int i = 0; i < roomsBase.length; i++) {
             if (price == roomsBase[i].getPrice() && persons == roomsBase[i].getPersons() && city == roomsBase[i].getCityName() && hotel == roomsBase[i].getHotelName())
-                rooms[i] = roomsBase[i];
-            if (rooms[i] == null) {
-
-            } else {
-                //             System.out.println(rooms[i]);
-            }
+                roomsByParameters[count] = roomsBase[i];
+ //           System.out.println(roomsByParameters[count]);
+            count++;
         }
-        return new Room[5];
+        return roomsByParameters;
     }
 
-    public Room[] getRooms() {
+    public Room[] getRooms(RoomAPI[] roomAPIS) {
         return new Room[0];
     }
 }

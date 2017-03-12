@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Controller {
 
-    public RoomAPI[] apis = new RoomAPI[3];
+    public static RoomAPI[] apis = new RoomAPI[3];
 
     public Controller() {
         apis[0] = new BookingComAPI();
@@ -20,20 +20,28 @@ public class Controller {
 
     public Room[] requstRooms(int price, int persons, String city, String hotel) {
 
-        int apisLength0 = apis[0].findRooms(price, persons, city, hotel).length;
-        int apisLength1 = apis[1].findRooms(price, persons, city, hotel).length;
-        int apisLength2 = apis[2].findRooms(price, persons, city, hotel).length;
-
         Room[] allRequestRooms = new Room[apis.length];
         int count = 0;
-        System.arraycopy(apis[0].findRooms(price, persons, city, hotel), count, allRequestRooms, count, apisLength0-1);
-        System.arraycopy(apis[1].findRooms(price, persons, city, hotel), count, allRequestRooms, apisLength0, apisLength1);
-        System.arraycopy(apis[2].findRooms(price, persons, city, hotel), count, allRequestRooms, (apisLength0 + apisLength1), apisLength2);
-        System.out.println(allRequestRooms[count]);
-        count++;
+        for (int i = 0; i < apis.length; i++) {
+            for (int j = 0; j < apis[i].findRooms(price, persons, city, hotel).length; j++) {
 
+                if (apis[i].findRooms(price, persons, city, hotel)[j] != null) {
+                    allRequestRooms[count] = apis[i].findRooms(price, persons, city, hotel)[j];
+                    System.out.println(allRequestRooms[count]);
+                    count++;
+                }
+            }
+        }
         return allRequestRooms;
     }
+
+    public Room[] check(RoomAPI api1, RoomAPI api2) {
+        Room[] checkRooms = new Room[apis.length];
+        int count = 0;
+
+        return checkRooms;
+    }
+
 }
 
 

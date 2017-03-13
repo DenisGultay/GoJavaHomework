@@ -17,7 +17,19 @@ public class MainRoomClass {
         GoogleAPI googleAPI = new GoogleAPI();
         Controller controller = new Controller();
 
-       controller.requstRooms(100, 1, "Lviv", "Lviv-Hotel");
+
+        controller.requstRooms(100, 1, "Stryi", "Star");
+        System.out.println();
+        controller.requstRooms(100, 1, "Lviv", "Lviv-Hotel");
+        System.out.println();
+        controller.requstRooms(200, 3, "Truskavec", "Geneva");
+        System.out.println("------------------------------");
+
+        controller.check(bookingComAPI, tripAdvisorAPI);
+        System.out.println();
+        controller.check(bookingComAPI, googleAPI);
+        System.out.println();
+        controller.check(tripAdvisorAPI, googleAPI);
 
     }
 }

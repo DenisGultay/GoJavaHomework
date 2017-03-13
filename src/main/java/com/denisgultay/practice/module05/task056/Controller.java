@@ -24,7 +24,6 @@ public class Controller {
         int count = 0;
         for (int i = 0; i < apis.length; i++) {
             for (int j = 0; j < apis[i].findRooms(price, persons, city, hotel).length; j++) {
-
                 if (apis[i].findRooms(price, persons, city, hotel)[j] != null) {
                     allRequestRooms[count] = apis[i].findRooms(price, persons, city, hotel)[j];
                     System.out.println(allRequestRooms[count]);
@@ -38,7 +37,16 @@ public class Controller {
     public Room[] check(RoomAPI api1, RoomAPI api2) {
         Room[] checkRooms = new Room[apis.length];
         int count = 0;
-
+        for (int i = 0; i < api1.getRooms().length; i++) {
+            for (int j = 0; j < api2.getRooms().length; j++) {
+              if(api1.getRooms()[i].equals(api2.getRooms()[j])){
+                 checkRooms[count] = api1.getRooms()[i];
+                 checkRooms[count+1] = api2.getRooms()[j];
+                  System.out.println(checkRooms[count]);
+                  System.out.println(checkRooms[count + 1]);
+              }
+            }
+        }
         return checkRooms;
     }
 

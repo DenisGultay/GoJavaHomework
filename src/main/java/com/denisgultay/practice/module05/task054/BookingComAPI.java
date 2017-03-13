@@ -37,9 +37,8 @@ public class BookingComAPI implements RoomAPI {
         return roomsByParameters;
     }
 
-    public Room[] getRooms(RoomAPI[] roomAPIS) {
-
-        return new Room[0];
+    public Room[] getRooms() {
+        return roomsBase;
     }
 
 }

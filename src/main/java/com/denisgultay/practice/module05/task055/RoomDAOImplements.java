@@ -8,14 +8,14 @@ public class RoomDAOImplements implements RoomDAO {
 
     public Room save(Room room) {
         int count = getRoomsNumber(roomsBase);
-        roomsBase [count] = room;
+        roomsBase[count] = room;
         System.out.println(room + "was saved");
         return room;
     }
 
-    private int getRoomsNumber (Room[] roomsBase){
+    private int getRoomsNumber(Room[] roomsBase) {
         int count = 0;
-        for (Room room: roomsBase) {
+        for (Room room : roomsBase) {
             if (roomsBase != null) {
                 count++;
             }
@@ -24,11 +24,11 @@ public class RoomDAOImplements implements RoomDAO {
     }
 
     public boolean delete(Room room) {
-        for (int i = 0; i < roomsBase.length ; i++) {
+        for (int i = 0; i < roomsBase.length; i++) {
             Room roomInBase = roomsBase[i];
-            if (room.equals(roomInBase)){
-                System.arraycopy(roomsBase, i+1, roomsBase, i, roomsBase.length-i-1);
-                roomsBase[roomsBase.length-1] = null;
+            if (room.equals(roomInBase)) {
+                System.arraycopy(roomsBase, i + 1, roomsBase, i, roomsBase.length - i - 1);
+                roomsBase[roomsBase.length - 1] = null;
                 System.out.println(roomsBase[i] + "was deleted");
             }
         }
@@ -36,14 +36,13 @@ public class RoomDAOImplements implements RoomDAO {
     }
 
     public Room update(Room room) {
-
         System.out.println("Room: " + room.getId() + " " + "was updated");
         return room;
     }
 
     public Room findById(long id) {
-        for (Room room: roomsBase) {
-            if (room!=null && room.getId() == id){
+        for (Room room : roomsBase) {
+            if (room != null && room.getId() == id) {
                 return room;
             }
         }

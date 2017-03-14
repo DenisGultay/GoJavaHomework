@@ -6,6 +6,7 @@ import com.denisgultay.practice.module05.task054.BookingComAPI;
 import com.denisgultay.practice.module05.task054.GoogleAPI;
 import com.denisgultay.practice.module05.task054.TripAdvisorAPI;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Controller {
@@ -18,39 +19,39 @@ public class Controller {
         apis[2] = new TripAdvisorAPI();
     }
 
-    public Room[] requstRooms(int price, int persons, String city, String hotel) {
+    public Room[] requestRooms(int price, int persons, String city, String hotel) {
 
-        Room[] allRequestRooms = new Room[apis.length];
-        int count = 0;
+        ArrayList<Room> requestRooms = new ArrayList<Room>();
         for (int i = 0; i < apis.length; i++) {
             for (int j = 0; j < apis[i].findRooms(price, persons, city, hotel).length; j++) {
                 if (apis[i].findRooms(price, persons, city, hotel)[j] != null) {
-                    allRequestRooms[count] = apis[i].findRooms(price, persons, city, hotel)[j];
-                    System.out.println(allRequestRooms[count]);
-                    count++;
+                    requestRooms.add(apis[i].findRooms(price, persons, city, hotel)[j]);
                 }
             }
         }
+        Room[] allRequestRooms = requestRooms.toArray(new Room[requestRooms.size()]);
+        System.out.println(Arrays.toString(allRequestRooms));
         return allRequestRooms;
     }
 
     public Room[] check(RoomAPI api1, RoomAPI api2) {
-        Room[] checkRooms = new Room[apis.length];
-        int count = 0;
+        ArrayList<Room> listOfRooms = new ArrayList<Room>();
         for (int i = 0; i < api1.getRooms().length; i++) {
             for (int j = 0; j < api2.getRooms().length; j++) {
-              if(api1.getRooms()[i].equals(api2.getRooms()[j])){
-                 checkRooms[count] = api1.getRooms()[i];
-                 checkRooms[count+1] = api2.getRooms()[j];
-                  System.out.println(checkRooms[count]);
-                  System.out.println(checkRooms[count + 1]);
-              }
+                if (api1.getRooms()[i].equals(api2.getRooms()[j])) {
+                    listOfRooms.add(api1.getRooms()[i]);
+                    listOfRooms.add(api2.getRooms()[j]);
+                }
             }
         }
+        Room[] checkRooms = listOfRooms.toArray(new Room[listOfRooms.size()]);
+        System.out.println(Arrays.toString(checkRooms));
+
         return checkRooms;
     }
-
 }
+
+
 
 
 

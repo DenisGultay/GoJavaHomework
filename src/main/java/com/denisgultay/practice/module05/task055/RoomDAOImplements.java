@@ -2,48 +2,50 @@ package com.denisgultay.practice.module05.task055;
 
 import com.denisgultay.practice.module05.task051_052.Room;
 
+import java.util.ArrayList;
+
 public class RoomDAOImplements implements RoomDAO {
 
-    Room[] roomsBase;
+    private Room[] roomsBase = new Room[5];
+
+    private ArrayList<Room> totalRoomsBase = new ArrayList<Room>();
 
     public Room save(Room room) {
-        int count = getRoomsNumber(roomsBase);
-        roomsBase[count] = room;
-        System.out.println(room + "was saved");
+        for (int i = 0; i < totalRoomsBase.size(); i++) {
+            totalRoomsBase.add(room);
+        }
+        System.out.println(room.toString() + "was saved");
         return room;
     }
 
-    private int getRoomsNumber(Room[] roomsBase) {
-        int count = 0;
-        for (Room room : roomsBase) {
-            if (roomsBase != null) {
-                count++;
-            }
-        }
-        return count;
-    }
-
     public boolean delete(Room room) {
-        for (int i = 0; i < roomsBase.length; i++) {
-            Room roomInBase = roomsBase[i];
-            if (room.equals(roomInBase)) {
-                System.arraycopy(roomsBase, i + 1, roomsBase, i, roomsBase.length - i - 1);
-                roomsBase[roomsBase.length - 1] = null;
-                System.out.println(roomsBase[i] + "was deleted");
+        for (int i = 0; i < totalRoomsBase.size(); i++) {
+            if (room.equals(totalRoomsBase.get(i))) {
+                totalRoomsBase.remove(i);
+                System.out.println(totalRoomsBase.get(i) + "was deleted");
             }
         }
         return true;
     }
 
     public Room update(Room room) {
-        System.out.println("Room: " + room.getId() + " " + "was updated");
+        for (int i = 0; i < totalRoomsBase.size()-1; i++) {
+            if(room.getId()!= totalRoomsBase.get(i).getId()){
+           }
+        }
+        save(room);
+        System.out.println("Room: " + room.toString() + " " + "added");
         return room;
     }
 
     public Room findById(long id) {
-        for (Room room : roomsBase) {
-            if (room != null && room.getId() == id) {
-                return room;
+        for (int i = 0; i < totalRoomsBase.size() - 1; i++) {
+
+            if (id == totalRoomsBase.get(i).getId()) {
+                return totalRoomsBase.get(i);
+            } else {
+                System.out.println("Room not found");
+                break;
             }
         }
         return null;

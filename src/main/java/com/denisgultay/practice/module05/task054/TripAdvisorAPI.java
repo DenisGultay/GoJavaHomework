@@ -3,9 +3,12 @@ package com.denisgultay.practice.module05.task054;
 import com.denisgultay.practice.module05.task051_052.Room;
 import com.denisgultay.practice.module05.task053.RoomAPI;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class TripAdvisorAPI implements RoomAPI {
 
-    public Room[] roomsBase = new Room[5];
+    private Room[] roomsBase = new Room[5];
 
     public TripAdvisorAPI() {
         Room trAdRoom1 = new Room(11, 200, 3, "Geneva", "Truskavec");
@@ -23,15 +26,14 @@ public class TripAdvisorAPI implements RoomAPI {
 
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] roomsByParameters = new Room[roomsBase.length];
-        int count = 0;
+        ArrayList<Room> roomsByParametrs = new ArrayList<Room>();
         for (int i = 0; i < roomsBase.length; i++) {
             if (price == roomsBase[i].getPrice() && persons == roomsBase[i].getPersons() && city == roomsBase[i].getCityName() && hotel == roomsBase[i].getHotelName())
-                roomsByParameters[count] = roomsBase[i];
- //           System.out.println(roomsByParameters[count]);
-            count++;
+                roomsByParametrs.add(roomsBase[i]);
         }
-        return roomsByParameters;
+        Room[] newRoomsByParameters = roomsByParametrs.toArray(new Room[roomsByParametrs.size()]);
+  //      System.out.println(Arrays.toString(newRoomsByParameters));
+        return newRoomsByParameters;
     }
 
     public Room[] getRooms() {

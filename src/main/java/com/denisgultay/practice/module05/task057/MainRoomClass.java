@@ -19,15 +19,14 @@ public class MainRoomClass {
         Controller controller = new Controller();
         RoomDAOImplements daoImplements = new RoomDAOImplements();
 
-        googleAPI.findRooms(200, 2, "Stryi", "Karpaty");
-
+       googleAPI.findRooms(200, 3, "Truskavec", "Geneva");
 
 //        controller.requestRooms(100, 1, "Stryi", "Star");
 //        System.out.println();
 //        controller.requestRooms(100, 1, "Lviv", "Lviv-Hotel");
 //        System.out.println();
-//        controller.requestRooms(200, 3, "Truskavec", "Geneva");
-//        System.out.println("------------------------------");
+      controller.requestRooms(200, 3, "Truskavec", "Geneva" );
+//       System.out.println("------------------------------");
 //
 //        controller.check(bookingComAPI, tripAdvisorAPI);
 //        System.out.println();
@@ -36,13 +35,13 @@ public class MainRoomClass {
 //        controller.check(tripAdvisorAPI, googleAPI);
 //        System.out.println("------------------------------");
 
-        daoImplements.save(new Room(15, 400, 3, "Vlasta", "Lviv"));
-        System.out.println();
-        daoImplements.delete(new Room(15, 400, 3, "Vlasta", "Lviv"));
-        System.out.println();
-        daoImplements.update(new Room(3, 300, 2, "Ukraina", "Kyiv"));
-        System.out.println();
-        daoImplements.findById(18);
+//        daoImplements.save(new Room(15, 400, 3, "Vlasta", "Lviv"));
+//        System.out.println();
+//        daoImplements.delete(new Room(15, 400, 3, "Vlasta", "Lviv"));
+//        System.out.println();
+//        daoImplements.update(new Room(3, 300, 2, "Ukraina", "Kyiv"));
+//        System.out.println();
+//        daoImplements.findById(18);
 
     }
 }

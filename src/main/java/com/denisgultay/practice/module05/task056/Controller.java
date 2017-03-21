@@ -44,21 +44,20 @@ public class Controller {
     }
 
     public Room[] check(RoomAPI api1, RoomAPI api2) {
-        Room[] checkRooms = new Room[];
-        for (int i = 0; i < api1.getRooms().length - 1; i++) {
-            if (api1.getRooms()[i].equals(api1.getRooms()[i + 1])) {
-                checkRooms[i] = api1.getRooms()[i];
-                checkRooms[i+1] = api1.getRooms()[i+1];
+        Room[] checkRooms = new Room[2];
+ //       int count = 0;
+        for (int i = 0; i < api1.getRooms().length; i++) {
+            for (int j = 0; j < api2.getRooms().length; j++) {
+                if(api1.getRooms()[i].equals(api2.getRooms()[j])) {
+                    checkRooms[0] = api1.getRooms()[i];
+                    checkRooms[1] = api1.getRooms()[j];
+                }
+      //              count++;
+    //                checkRooms = api2.arraysExtends(checkRooms, api2.getRooms()[j]);
+
             }
         }
-//        for (int i = 0; i < checkRooms.length; i++) {
-//            for (int j = 0; j < api2.getRooms().length - 1; j++) {
-//                if (checkRooms[i].equals(api2.getRooms()[j])) {
-//                    checkRooms = checkRooms.arraysExtends(checkRooms, api2.getRooms()[j]);
-//                }
-//            }
-//        }
-            System.out.println(Arrays.toString(checkRooms));
+        System.out.println(Arrays.toString(checkRooms));
             return checkRooms;
         }
 

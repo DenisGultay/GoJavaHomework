@@ -19,21 +19,21 @@ public class MainRoomClass {
         Controller controller = new Controller();
         RoomDAOImplements daoImplements = new RoomDAOImplements();
 
-       googleAPI.findRooms(200, 3, "Truskavec", "Geneva");
+        //      googleAPI.findRooms(200, 3, "Truskavec", "Geneva");
 
 //        controller.requestRooms(100, 1, "Stryi", "Star");
 //        System.out.println();
 //        controller.requestRooms(100, 1, "Lviv", "Lviv-Hotel");
 //        System.out.println();
-      controller.requestRooms(200, 3, "Truskavec", "Geneva" );
-//       System.out.println("------------------------------");
-//
-//        controller.check(bookingComAPI, tripAdvisorAPI);
-//        System.out.println();
-//        controller.check(bookingComAPI, googleAPI);
-//        System.out.println();
-//        controller.check(tripAdvisorAPI, googleAPI);
+//        controller.requestRooms(200, 3, "Truskavec", "Geneva");
 //        System.out.println("------------------------------");
+//
+        controller.check(bookingComAPI, tripAdvisorAPI);
+        System.out.println();
+  //      controller.check(bookingComAPI, googleAPI);
+  //      System.out.println();
+    //    controller.check(tripAdvisorAPI, googleAPI);
+        System.out.println("------------------------------");
 
 //        daoImplements.save(new Room(15, 400, 3, "Vlasta", "Lviv"));
 //        System.out.println();

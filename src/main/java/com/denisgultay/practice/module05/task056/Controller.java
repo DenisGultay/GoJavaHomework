@@ -21,38 +21,49 @@ public class Controller {
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
 
-        Room[] allRequestRooms = new Room[apis[0].findRooms(price,persons,city,hotel).length];
+        Room[] allRequestRooms = new Room[apis[0].findRooms(price, persons, city, hotel).length];
         for (int i = 0; i < apis[0].findRooms(price, persons, city, hotel).length; i++) {
             allRequestRooms = apis[0].findRooms(price, persons, city, hotel);
- //           System.arraycopy(apis[0].findRooms(price, persons, city, hotel),i,allRequestRooms,i,apis[0].findRooms(price, persons, city, hotel).length);
         }
         for (int i = 0; i < apis[1].findRooms(price, persons, city, hotel).length; i++) {
-            allRequestRooms = apis[1].arraysExtends(allRequestRooms,apis[1].findRooms(price, persons, city, hotel)[i]);
+            if (allRequestRooms.length == 0) {
+                allRequestRooms = apis[1].findRooms(price, persons, city, hotel);
+            } else {
+                allRequestRooms = apis[1].arraysExtends(allRequestRooms, apis[1].findRooms(price, persons, city, hotel)[i]);
+            }
         }
         for (int i = 0; i < apis[2].findRooms(price, persons, city, hotel).length; i++) {
-            allRequestRooms = apis[2].arraysExtends(allRequestRooms,apis[2].findRooms(price, persons, city, hotel)[i]);
+            if (allRequestRooms.length == 0) {
+                allRequestRooms = apis[2].findRooms(price, persons, city, hotel);
+            } else {
+                allRequestRooms = apis[2].arraysExtends(allRequestRooms, apis[2].findRooms(price, persons, city, hotel)[i]);
+            }
         }
         System.out.println(Arrays.toString(allRequestRooms));
         return allRequestRooms;
     }
 
     public Room[] check(RoomAPI api1, RoomAPI api2) {
-        Room[] checkRooms = new Room[2];
-        int count = 0;
-        for (int i = 0; i < api1.getRooms().length; i++) {
-            for (int j = 0; j < api2.getRooms().length; j++) {
-                if (api1.getRooms()[i].equals(api2.getRooms()[j])) {
-                    checkRooms[count] = api1.getRooms()[i];
-                    checkRooms[count + 1] = api2.getRooms()[j];
-                }
+        Room[] checkRooms = new Room[];
+        for (int i = 0; i < api1.getRooms().length - 1; i++) {
+            if (api1.getRooms()[i].equals(api1.getRooms()[i + 1])) {
+                checkRooms[i] = api1.getRooms()[i];
+                checkRooms[i+1] = api1.getRooms()[i+1];
             }
         }
-        System.out.println(Arrays.toString(checkRooms));
-        return checkRooms;
+//        for (int i = 0; i < checkRooms.length; i++) {
+//            for (int j = 0; j < api2.getRooms().length - 1; j++) {
+//                if (checkRooms[i].equals(api2.getRooms()[j])) {
+//                    checkRooms = checkRooms.arraysExtends(checkRooms, api2.getRooms()[j]);
+//                }
+//            }
+//        }
+            System.out.println(Arrays.toString(checkRooms));
+            return checkRooms;
+        }
+
+
     }
-
-
-}
 
 
 

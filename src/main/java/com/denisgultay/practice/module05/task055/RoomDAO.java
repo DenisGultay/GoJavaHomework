@@ -8,4 +8,8 @@ public interface RoomDAO {
     boolean delete(Room room);
     Room update(Room room);
     Room findById(long id);
+
+    Room [] arraysExtends(Room[] rooms, Room newElement);
+
+    Room[] arrayDecrease(Room[] array);
 }

@@ -57,8 +57,8 @@ public class Controller {
             for (int j = 0; j < api2.getRooms().length; j++) {
                 if (api2.getRooms()[j].equals(api1.getRooms()[i])) {
                     checkRooms = api1.arraysExtends(checkRooms, api2.getRooms()[j]);
-                    if (checkRooms[i].getId() == checkRooms[j].getId() && i!=j) {
-                   checkRooms[i] = null;
+                    if (checkRooms[i].getId() == checkRooms[j].getId() && i != j) {
+                        checkRooms[i] = null;
                     }
                 }
             }

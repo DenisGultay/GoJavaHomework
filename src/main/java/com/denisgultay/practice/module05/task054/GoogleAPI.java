@@ -35,32 +35,32 @@ public class GoogleAPI implements RoomAPI {
             count++;
         }
         roomsByParameters = arrayDecrease(roomsByParameters);
-      //         System.out.println(Arrays.toString(roomsByParameters));
+        //         System.out.println(Arrays.toString(roomsByParameters));
         return roomsByParameters;
     }
 
-    public Room [] arraysExtends(Room[] rooms, Room newElement){
-        Room[] newArray = new Room[rooms.length +1];
+    public Room[] arraysExtends(Room[] rooms, Room newElement) {          // метод для розширення массиву
+        Room[] newArray = new Room[rooms.length + 1];
         for (int i = 0; i < rooms.length; i++) {
             newArray[i] = rooms[i];
-            newArray[newArray.length-1] = newElement;
+            newArray[newArray.length - 1] = newElement;
         }
         //     System.out.println(Arrays.toString(newArray));
         return newArray;
     }
 
-    public Room[] arrayDecrease(Room[] array) {
+    public Room[] arrayDecrease(Room[] array) {                      // метод для зменшення массиву(відкидаємо "null")
         int nullElements = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
                 nullElements++;
             }
         }
-        int newSize = array.length-nullElements;
+        int newSize = array.length - nullElements;
         Room[] newRoomsArray = new Room[newSize];
-        int count =0;
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i]!=null){
+            if (array[i] != null) {
                 newRoomsArray[count] = array[i];
                 count++;
             }

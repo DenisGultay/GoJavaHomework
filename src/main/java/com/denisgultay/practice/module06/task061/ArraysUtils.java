@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public final class ArraysUtils {
 
+    private ArraysUtils() {
+    }
+
     public static final int printSumOfArray(int[] array) {
         int resultSumOfIntegerArray = 0;
         for (int i = 0; i < array.length; i++) {

@@ -29,7 +29,7 @@ public class MainUsers {
         System.out.println("----------------------------------");
         userUtils.deleteEmptyUsers(users);
         System.out.println("----------------------------------");
-        userUtils.paySalaryToUsers(users);
+ //       userUtils.paySalaryToUsers(users);
 
 
     }

@@ -1,5 +1,6 @@
 package com.denisgultay.practice.module06.task063;
 
+import com.denisgultay.practice.module05.task051_052.Room;
 import com.denisgultay.practice.module06.task062.User;
 
 import java.util.Arrays;
@@ -11,13 +12,14 @@ public class UserUtils {
     public static User[] uniqueUsers(User[] users) {
         User[] uniqueUserArray = new User[users.length];
         int count = 0;
-        for (int i = count + 1; i < users.length; i++) {
-            if (!(users[count].equals(users[i]))) {
-                uniqueUserArray[count] = users[i];
-                System.out.println(uniqueUserArray[count]);
+        for (int i =0; i < users.length; i++) {
+            if (users[i]!=null && !(users[i].equals(users[i+1]))) {
+                uniqueUserArray[count] = users[i+1];
+                count++;
             }
         }
-        count++;
+        uniqueUserArray = arrayDecrease(uniqueUserArray);
+        System.out.println(Arrays.toString(uniqueUserArray));
         return uniqueUserArray;
     }
 
@@ -30,21 +32,20 @@ public class UserUtils {
                 count++;
             }
         }
-        String printBalanceUsers = Arrays.toString(contitionalBalanceUsers);
-        System.out.println(printBalanceUsers);
+        contitionalBalanceUsers = arrayDecrease(contitionalBalanceUsers);
+        System.out.println(Arrays.toString(contitionalBalanceUsers));
         return contitionalBalanceUsers;
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
+        User[] userWithNewBalance = new User[users.length];
         int newBalance;
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
                 newBalance = users[i].getBalance() + users[i].getSalary();
-                users[i].setBalance(newBalance);
             }
         }
-        String usersWithNewBalance = Arrays.toString(users);
-        System.out.println(usersWithNewBalance);
+        System.out.println(Arrays.toString(userWithNewBalance));
         return users;
     }
 
@@ -57,8 +58,7 @@ public class UserUtils {
                 count++;
             }
         }
-        String printUsersId = Arrays.toString(usersId);
-        System.out.println(printUsersId);
+        System.out.println(Arrays.toString(usersId));
         return usersId;
     }
 
@@ -68,12 +68,32 @@ public class UserUtils {
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
                 notEmptyUsers[count] = users[i];
-                System.out.println(notEmptyUsers[count]);
                 count++;
             }
         }
+        notEmptyUsers = arrayDecrease(notEmptyUsers);
+        System.out.println(Arrays.toString(notEmptyUsers));
         return notEmptyUsers;
     }
 
+    public static User[] arrayDecrease(User[] array) {         // метод для зменшення массиву(відкидаємо "null")
+        int nullElements = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
+                nullElements++;
+            }
+        }
+        int newSize = array.length - nullElements;
+        User[] newUserArray = new User[newSize];
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                newUserArray[count] = array[i];
+                count++;
+            }
+        }
+        //      System.out.println(Arrays.toString(newUserArray));
+        return newUserArray;
+    }
 }
 

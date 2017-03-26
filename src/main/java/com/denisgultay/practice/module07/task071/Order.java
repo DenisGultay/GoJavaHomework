@@ -2,6 +2,8 @@ package com.denisgultay.practice.module07.task071;
 
 import com.denisgultay.practice.module04.task042.Currency;
 
+import java.util.Comparator;
+
 public class Order implements Comparable <Order> {
     private long id;
     private int price;
@@ -64,8 +66,34 @@ public class Order implements Comparable <Order> {
     }
 
     public int compareTo(Order o) {
-        return (this.price - o.price);
+        return -(this.price - o.price);
     }
+
+    public static Comparator<Order> PriceAndCityComp = new Comparator<Order>() {
+
+        public int compare(Order o1, Order o2) {
+            int mark = o1.getPrice() - o2.getPrice();
+            if(mark == 0){
+                mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            }
+            return mark;
+        }
+    };public static Comparator<Order> NameIdCityComp = new Comparator<Order>() {
+
+        public int compare(Order o1, Order o2) {
+            int mark = o1.getItemName().compareTo(o2.getItemName());
+            if(mark == 0){
+                mark = (int) (o1.getId() - o2.getId());
+            }
+            if(mark == 0){
+                mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            }
+
+            return mark;
+        }
+    };
+
+
 
     @Override
     public String toString() {

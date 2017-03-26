@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class UserUtils {
 
     public static User[] users = new User[10];
+    public static User[] newUser = new User[users.length];
+
 
     public static User[] uniqueUsers(User[] users) {
         User[] uniqueUserArray = new User[users.length];
@@ -38,14 +40,12 @@ public class UserUtils {
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
-        User[] userWithNewBalance = new User[users.length];
+        System.arraycopy(users,0,newUser,0,users.length);
         int newBalance;
-        for (int i = 0; i < users.length; i++) {
-            if (users[i] != null) {
-                newBalance = users[i].getBalance() + users[i].getSalary();
-            }
+        for (int i = 0; i < newUser.length; i++) {
+            newBalance = users[i].getSalary() + users[i].getBalance();
+            newUser[i].getBalance();
         }
-        System.out.println(Arrays.toString(userWithNewBalance));
         return users;
     }
 

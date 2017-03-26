@@ -21,15 +21,15 @@ public class MainUsers {
         users[9] = null;
 
         UserUtils userUtils = new UserUtils();
-        userUtils.usersWithContitionalBalance(users, 150000);
-        System.out.println("----------------------------------");
-        userUtils.getUsersId(users);
-        System.out.println("----------------------------------");
-        userUtils.uniqueUsers(users);
-        System.out.println("----------------------------------");
-        userUtils.deleteEmptyUsers(users);
-        System.out.println("----------------------------------");
- //       userUtils.paySalaryToUsers(users);
+//        userUtils.usersWithContitionalBalance(users, 150000);
+//        System.out.println("----------------------------------");
+//        userUtils.getUsersId(users);
+//        System.out.println("----------------------------------");
+//        userUtils.uniqueUsers(users);
+//        System.out.println("----------------------------------");
+//        userUtils.deleteEmptyUsers(users);
+//        System.out.println("----------------------------------");
+        userUtils.paySalaryToUsers(users);
 
 
     }

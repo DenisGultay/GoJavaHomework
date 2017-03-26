@@ -51,4 +51,13 @@ public class User {
         this.city = city;
         this.balance = balance;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }

@@ -1,7 +1,5 @@
 package com.denisgultay.practice.module06.task063;
 
-import com.denisgultay.practice.module05.task051_052.Room;
-import com.denisgultay.practice.module06.task062.NewBalanceUser;
 import com.denisgultay.practice.module06.task062.User;
 
 import java.util.Arrays;
@@ -9,7 +7,6 @@ import java.util.Arrays;
 public final class UserUtils {
 
     public static User[] users = new User[10];
-    public static NewBalanceUser[] newUsers = new NewBalanceUser[users.length];
 
     private UserUtils() {
     }
@@ -42,14 +39,14 @@ public final class UserUtils {
         return contitionalBalanceUsers;
     }
 
-    public static final NewBalanceUser[] paySalaryToUsers(User[] users) {
+    public static final User[] paySalaryToUsers(User[] users) {
+        User[] newUsers = new User[users.length];
         for (int i = 0; i < users.length; i++) {
-            newUsers[i].setId(users[i].getId());
-            newUsers[i].setFirstName(users[i].getFirstName());
-            newUsers[i].setLastName(users[i].getLastName());
-            newUsers[i].setSalary(users[i].getSalary());
-            newUsers[i].setBalance(users[i].getBalance() + users[i].getSalary());
+            if (users[i] != null) {
+                newUsers[i] = new User(users[i].getId(), users[i].getFirstName(), users[i].getLastName(), users[i].getSalary(), users[i].getSalary() + users[i].getBalance());
+            }
         }
+        newUsers = arrayDecrease(newUsers);
         System.out.println(Arrays.toString(newUsers));
         return newUsers;
     }

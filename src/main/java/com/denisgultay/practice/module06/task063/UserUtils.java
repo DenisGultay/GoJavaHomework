@@ -1,22 +1,25 @@
 package com.denisgultay.practice.module06.task063;
 
 import com.denisgultay.practice.module05.task051_052.Room;
+import com.denisgultay.practice.module06.task062.NewBalanceUser;
 import com.denisgultay.practice.module06.task062.User;
 
 import java.util.Arrays;
 
-public class UserUtils {
+public final class UserUtils {
 
     public static User[] users = new User[10];
-    public static User[] newUser = new User[users.length];
+    public static NewBalanceUser[] newUsers = new NewBalanceUser[users.length];
 
+    private UserUtils() {
+    }
 
-    public static User[] uniqueUsers(User[] users) {
+    public static final User[] uniqueUsers(User[] users) {
         User[] uniqueUserArray = new User[users.length];
         int count = 0;
-        for (int i =0; i < users.length; i++) {
-            if (users[i]!=null && !(users[i].equals(users[i+1]))) {
-                uniqueUserArray[count] = users[i+1];
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null && !(users[i].equals(users[i + 1]))) {
+                uniqueUserArray[count] = users[i + 1];
                 count++;
             }
         }
@@ -25,7 +28,7 @@ public class UserUtils {
         return uniqueUserArray;
     }
 
-    public static User[] usersWithContitionalBalance(User[] users, int balance) {
+    public static final User[] usersWithContitionalBalance(User[] users, int balance) {
         User[] contitionalBalanceUsers = new User[users.length];
         int count = 0;
         for (int i = 0; i < contitionalBalanceUsers.length; i++) {
@@ -39,14 +42,16 @@ public class UserUtils {
         return contitionalBalanceUsers;
     }
 
-    public static final User[] paySalaryToUsers(User[] users) {
-        System.arraycopy(users,0,newUser,0,users.length);
-        int newBalance;
-        for (int i = 0; i < newUser.length; i++) {
-            newBalance = users[i].getSalary() + users[i].getBalance();
-            newUser[i].getBalance();
+    public static final NewBalanceUser[] paySalaryToUsers(User[] users) {
+        for (int i = 0; i < users.length; i++) {
+            newUsers[i].setId(users[i].getId());
+            newUsers[i].setFirstName(users[i].getFirstName());
+            newUsers[i].setLastName(users[i].getLastName());
+            newUsers[i].setSalary(users[i].getSalary());
+            newUsers[i].setBalance(users[i].getBalance() + users[i].getSalary());
         }
-        return users;
+        System.out.println(Arrays.toString(newUsers));
+        return newUsers;
     }
 
     public static final long[] getUsersId(User[] users) {
@@ -62,7 +67,7 @@ public class UserUtils {
         return usersId;
     }
 
-    public static User[] deleteEmptyUsers(User[] users) {
+    public static final User[] deleteEmptyUsers(User[] users) {
         User[] notEmptyUsers = new User[users.length];
         int count = 0;
         for (int i = 0; i < users.length; i++) {
@@ -76,7 +81,7 @@ public class UserUtils {
         return notEmptyUsers;
     }
 
-    public static User[] arrayDecrease(User[] array) {         // метод для зменшення массиву(відкидаємо "null")
+    public static final User[] arrayDecrease(User[] array) {         // метод для зменшення массиву(відкидаємо "null")
         int nullElements = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {

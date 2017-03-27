@@ -16,6 +16,7 @@ public final class User {
         this.balance = balance;
     }
 
+
     public long getId() {
         return id;
     }

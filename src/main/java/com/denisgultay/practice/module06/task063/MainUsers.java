@@ -1,5 +1,6 @@
 package com.denisgultay.practice.module06.task063;
 
+import com.denisgultay.practice.module06.task062.NewBalanceUser;
 import com.denisgultay.practice.module06.task062.User;
 import com.denisgultay.practice.module06.task063.UserUtils;
 
@@ -20,7 +21,20 @@ public class MainUsers {
         users[8] = new User(5L, "Andriy", "Shevchenko", 35000, 150000);
         users[9] = null;
 
-        UserUtils userUtils = new UserUtils();
+        NewBalanceUser[] newUsers = new NewBalanceUser[10];
+
+         newUsers[0] = new NewBalanceUser(11, "Denis","Gultay", 4000, 5000);
+         newUsers[1] = new NewBalanceUser(22, "Denis","Gultay", 4000, 5000);
+         newUsers[2] = new NewBalanceUser(33, "Denis","Gultay", 4000, 5000);
+         newUsers[3] = new NewBalanceUser(44, "Denis","Gultay", 4000, 5000);
+         newUsers[4] = new NewBalanceUser(55, "Denis","Gultay", 4000, 5000);
+         newUsers[5] = new NewBalanceUser(66, "Denis","Gultay", 4000, 5000);
+         newUsers[6] = new NewBalanceUser(77, "Denis","Gultay", 4000, 5000);
+         newUsers[7] = new NewBalanceUser(88, "Denis","Gultay", 4000, 5000);
+         newUsers[8] = new NewBalanceUser(99, "Denis","Gultay", 4000, 5000);
+         newUsers[8] = new NewBalanceUser(101, "Denis","Gultay", 4000, 5000);
+
+         UserUtils userUtils = null;
 //        userUtils.usersWithContitionalBalance(users, 150000);
 //        System.out.println("----------------------------------");
 //        userUtils.getUsersId(users);
@@ -29,7 +43,7 @@ public class MainUsers {
 //        System.out.println("----------------------------------");
 //        userUtils.deleteEmptyUsers(users);
 //        System.out.println("----------------------------------");
-        userUtils.paySalaryToUsers(users);
+          userUtils.paySalaryToUsers(users);
 
 
     }

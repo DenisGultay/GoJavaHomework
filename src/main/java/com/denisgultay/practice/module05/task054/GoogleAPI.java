@@ -1,6 +1,7 @@
 package com.denisgultay.practice.module05.task054;
 
 import com.denisgultay.practice.module05.task051_052.Room;
+import com.denisgultay.practice.module05.task053.ArraysChange;
 import com.denisgultay.practice.module05.task053.RoomAPI;
 
 import java.lang.reflect.Array;
@@ -9,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GoogleAPI implements RoomAPI {
+
+    ArraysChange arraysChange;
 
     private Room[] roomsBase = new Room[5];
 
@@ -30,43 +33,14 @@ public class GoogleAPI implements RoomAPI {
         Room[] roomsByParameters = new Room[roomsBase.length];
         int count = 0;
         for (int i = 0; i < roomsBase.length; i++) {
-            if (price == roomsBase[i].getPrice() && persons == roomsBase[i].getPersons() && city == roomsBase[i].getCityName() && hotel == roomsBase[i].getHotelName())
+            if (price == roomsBase[i].getPrice() && persons == roomsBase[i].getPersons() && city.equals(roomsBase[i].getCityName()) && hotel.equals(roomsBase[i].getHotelName())) {
                 roomsByParameters[count] = roomsBase[i];
-            count++;
-        }
-        roomsByParameters = arrayDecrease(roomsByParameters);
-        //         System.out.println(Arrays.toString(roomsByParameters));
-        return roomsByParameters;
-    }
-
-    public Room[] arraysExtends(Room[] rooms, Room newElement) {          // метод для розширення массиву
-        Room[] newArray = new Room[rooms.length + 1];
-        for (int i = 0; i < rooms.length; i++) {
-            newArray[i] = rooms[i];
-            newArray[newArray.length - 1] = newElement;
-        }
-        //     System.out.println(Arrays.toString(newArray));
-        return newArray;
-    }
-
-    public Room[] arrayDecrease(Room[] array) {                      // метод для зменшення массиву(відкидаємо "null")
-        int nullElements = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == null) {
-                nullElements++;
-            }
-        }
-        int newSize = array.length - nullElements;
-        Room[] newRoomsArray = new Room[newSize];
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != null) {
-                newRoomsArray[count] = array[i];
                 count++;
             }
         }
-        //      System.out.println(Arrays.toString(newRoomsArray));
-        return newRoomsArray;
+        roomsByParameters = arraysChange.arrayDecrease(roomsByParameters);
+        //         System.out.println(Arrays.toString(roomsByParameters));
+        return roomsByParameters;
     }
 
     public Room[] getRooms() {

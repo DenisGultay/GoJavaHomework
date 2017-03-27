@@ -1,6 +1,7 @@
 package com.denisgultay.practice.module05.task056;
 
 import com.denisgultay.practice.module05.task051_052.Room;
+import com.denisgultay.practice.module05.task053.ArraysChange;
 import com.denisgultay.practice.module05.task053.RoomAPI;
 import com.denisgultay.practice.module05.task054.BookingComAPI;
 import com.denisgultay.practice.module05.task054.GoogleAPI;
@@ -11,7 +12,9 @@ import java.util.Arrays;
 
 public class Controller {
 
-    public static RoomAPI[] apis = new RoomAPI[3];
+    ArraysChange arraysChange;
+
+    private static RoomAPI[] apis = new RoomAPI[3];
 
     public Controller() {
         apis[0] = new BookingComAPI();
@@ -21,22 +24,14 @@ public class Controller {
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
 
-        Room[] allRequestRooms = new Room[apis[0].findRooms(price, persons, city, hotel).length];
-        for (int i = 0; i < apis[0].findRooms(price, persons, city, hotel).length; i++) {
-            allRequestRooms = apis[0].findRooms(price, persons, city, hotel);
-        }
-        for (int i = 0; i < apis[1].findRooms(price, persons, city, hotel).length; i++) {
-            if (allRequestRooms.length == 0) {
-                allRequestRooms = apis[1].findRooms(price, persons, city, hotel);
-            } else {
-                allRequestRooms = apis[1].arraysExtends(allRequestRooms, apis[1].findRooms(price, persons, city, hotel)[i]);
-            }
-        }
-        for (int i = 0; i < apis[2].findRooms(price, persons, city, hotel).length; i++) {
-            if (allRequestRooms.length == 0) {
-                allRequestRooms = apis[2].findRooms(price, persons, city, hotel);
-            } else {
-                allRequestRooms = apis[2].arraysExtends(allRequestRooms, apis[2].findRooms(price, persons, city, hotel)[i]);
+        Room[] allRequestRooms = apis[0].findRooms(price, persons, city, hotel);
+        for (int i = 1; i < apis.length; i++) {
+            for (int j = 0; j < apis[i].findRooms(price, persons, city, hotel).length; j++) {
+                if (allRequestRooms.length == 0) {
+                    allRequestRooms = apis[i].findRooms(price, persons, city, hotel);
+                } else {
+                    allRequestRooms = arraysChange.arraysExtends(allRequestRooms, apis[i].findRooms(price, persons, city, hotel)[j]);
+                }
             }
         }
         System.out.println(Arrays.toString(allRequestRooms));
@@ -52,11 +47,11 @@ public class Controller {
                 }
             }
         }
-        checkRooms = api1.arrayDecrease(checkRooms);
+        checkRooms = arraysChange.arrayDecrease(checkRooms);
         for (int i = 1; i < api1.getRooms().length; i++) {
             for (int j = 0; j < api2.getRooms().length; j++) {
                 if (api2.getRooms()[j].equals(api1.getRooms()[i])) {
-                    checkRooms = api1.arraysExtends(checkRooms, api2.getRooms()[j]);
+                    checkRooms = arraysChange.arraysExtends(checkRooms, api2.getRooms()[j]);
                     if (checkRooms[i].getId() == checkRooms[j].getId() && i != j) {
                         checkRooms[i] = null;
                     }

@@ -8,9 +8,6 @@ public interface RoomAPI {
 
     Room[] getRooms();
 
-    Room [] arraysExtends(Room[] rooms, Room newElement);
-
-    Room[] arrayDecrease(Room[] array);
 }
 
 

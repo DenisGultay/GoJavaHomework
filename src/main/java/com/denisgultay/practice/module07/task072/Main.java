@@ -51,14 +51,14 @@ public class Main {
         orderList.add(order9);
         orderList.add(order10);
 
-//        Collections.sort(orderList);
-//        System.out.println(orderList);
-//        System.out.println();
-//        Collections.sort(orderList, Order.PriceAndCityComp);
-//        System.out.println(orderList);
-//        System.out.println();
-//        Collections.sort(orderList,Order.NameIdCityComp);
-//        System.out.println(orderList);
+        Collections.sort(orderList);
+        System.out.println(orderList);
+        System.out.println();
+        Collections.sort(orderList, Order.PriceAndCityComp);
+        System.out.println(orderList);
+        System.out.println();
+        Collections.sort(orderList,Order.NameIdCityComp);
+        System.out.println(orderList);
 
         Set<Order> orderSet = new TreeSet<Order>();
         orderSet.add(order1);

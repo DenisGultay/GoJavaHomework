@@ -88,7 +88,6 @@ public class Order implements Comparable <Order> {
             if(mark == 0){
                 mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
-
             return mark;
         }
     };

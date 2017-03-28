@@ -5,7 +5,7 @@ import com.denisgultay.practice.module04.task042.Currency;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-public class Order implements Comparable <Order> {
+public class Order implements Comparable<Order> {
     private long id;
     private int price;
     private Currency currency;
@@ -102,7 +102,7 @@ public class Order implements Comparable <Order> {
 
         public int compare(Order o1, Order o2) {
             int mark = o1.getPrice() - o2.getPrice();
-            if(mark == 0){
+            if (mark == 0) {
                 mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
             return mark;
@@ -113,21 +113,15 @@ public class Order implements Comparable <Order> {
 
         public int compare(Order o1, Order o2) {
             int mark = o1.getItemName().compareTo(o2.getItemName());
-            if(mark == 0){
+            if (mark == 0) {
                 mark = (int) (o1.getId() - o2.getId());
             }
-            if(mark == 0){
+            if (mark == 0) {
                 mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
             return mark;
         }
     };
-
-//    public static boolean orderByUserLastName(TreeSet<Order>, String lastName){
-//
-//
-//    }
-
 
 
     @Override

@@ -51,16 +51,16 @@ public class Main {
         orderList.add(order9);
         orderList.add(order10);
 
-        Collections.sort(orderList);
-        System.out.println(orderList);
-        System.out.println();
-        Collections.sort(orderList, Order.PriceAndCityComp);
-        System.out.println(orderList);
-        System.out.println();
-        Collections.sort(orderList,Order.NameIdCityComp);
-        System.out.println(orderList);
+//        Collections.sort(orderList);
+//        System.out.println(orderList);
+//        System.out.println();
+//        Collections.sort(orderList, Order.PriceAndCityComp);
+//        System.out.println(orderList);
+//        System.out.println();
+//        Collections.sort(orderList,Order.NameIdCityComp);
+//        System.out.println(orderList);
 
-        Set<Order> orderSet = new TreeSet<Order>();
+        Set<Order> orderSet = new TreeSet<>();
         orderSet.add(order1);
         orderSet.add(order2);
         orderSet.add(order3);
@@ -68,10 +68,20 @@ public class Main {
         orderSet.add(order7);
         orderSet.add(order9);
         orderSet.add(order10);
-        orderSet.add(order11);
-        orderSet.add(order12);
+        orderSet.add(order8);
+        orderSet.add(order5);
         orderSet.add(order13);
 
+        System.out.println(orderByUserLastName((TreeSet<Order>) orderSet, "Borisov"));
+    }
+
+    public static boolean orderByUserLastName(TreeSet<Order> treeSetOrders, String lastName) {
+        for (Order order : treeSetOrders) {
+            if (order.getUser().getLastName().equals(lastName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

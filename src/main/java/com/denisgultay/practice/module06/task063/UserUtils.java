@@ -6,8 +6,6 @@ import java.util.Arrays;
 
 public final class UserUtils {
 
-    public static User[] users = new User[10];
-
     private UserUtils() {
     }
 

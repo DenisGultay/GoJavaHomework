@@ -11,8 +11,6 @@ import java.util.List;
 
 public class GoogleAPI implements RoomAPI {
 
-    ArraysChange arraysChange;
-
     private Room[] roomsBase = new Room[5];
 
     public GoogleAPI() {
@@ -38,7 +36,7 @@ public class GoogleAPI implements RoomAPI {
                 count++;
             }
         }
-        roomsByParameters = arraysChange.arrayDecrease(roomsByParameters);
+        roomsByParameters = ArraysChange.arrayDecrease(roomsByParameters);
         //         System.out.println(Arrays.toString(roomsByParameters));
         return roomsByParameters;
     }

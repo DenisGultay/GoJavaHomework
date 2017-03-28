@@ -9,10 +9,7 @@ import java.util.Arrays;
 
 public class BookingComAPI implements RoomAPI {
 
-    ArraysChange arraysChange;
-
     private Room[] roomsBase = new Room[5];
-
 
     public BookingComAPI() {
         Room bComRoom1 = new Room(1, 100, 1, "Lviv-Hotel", "Lviv");
@@ -28,7 +25,6 @@ public class BookingComAPI implements RoomAPI {
         roomsBase[4] = bComRoom5;
     }
 
-
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room[] roomsByParameters = new Room[roomsBase.length];
         int count = 0;
@@ -38,8 +34,8 @@ public class BookingComAPI implements RoomAPI {
                 count++;
             }
         }
-        roomsByParameters = arraysChange.arrayDecrease(roomsByParameters);
-    //                 System.out.println(Arrays.toString(roomsByParameters));
+        roomsByParameters = ArraysChange.arrayDecrease(roomsByParameters);
+        //                 System.out.println(Arrays.toString(roomsByParameters));
         return roomsByParameters;
     }
 

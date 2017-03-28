@@ -12,8 +12,6 @@ import java.util.Arrays;
 
 public class Controller {
 
-    ArraysChange arraysChange;
-
     private static RoomAPI[] apis = new RoomAPI[3];
 
     public Controller() {
@@ -30,7 +28,7 @@ public class Controller {
                 if (allRequestRooms.length == 0) {
                     allRequestRooms = apis[i].findRooms(price, persons, city, hotel);
                 } else {
-                    allRequestRooms = arraysChange.arraysExtends(allRequestRooms, apis[i].findRooms(price, persons, city, hotel)[j]);
+                    allRequestRooms = ArraysChange.arraysExtends(allRequestRooms, apis[i].findRooms(price, persons, city, hotel)[j]);
                 }
             }
         }
@@ -47,11 +45,11 @@ public class Controller {
                 }
             }
         }
-        checkRooms = arraysChange.arrayDecrease(checkRooms);
+        checkRooms = ArraysChange.arrayDecrease(checkRooms);
         for (int i = 1; i < api1.getRooms().length; i++) {
             for (int j = 0; j < api2.getRooms().length; j++) {
                 if (api2.getRooms()[j].equals(api1.getRooms()[i])) {
-                    checkRooms = arraysChange.arraysExtends(checkRooms, api2.getRooms()[j]);
+                    checkRooms = ArraysChange.arraysExtends(checkRooms, api2.getRooms()[j]);
                     if (checkRooms[i].getId() == checkRooms[j].getId() && i != j) {
                         checkRooms[i] = null;
                     }

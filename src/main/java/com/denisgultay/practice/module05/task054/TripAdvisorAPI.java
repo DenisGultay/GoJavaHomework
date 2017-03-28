@@ -9,8 +9,6 @@ import java.util.Arrays;
 
 public class TripAdvisorAPI implements RoomAPI {
 
-    ArraysChange arraysChange;
-
     private Room[] roomsBase = new Room[5];
 
     public TripAdvisorAPI() {
@@ -27,7 +25,6 @@ public class TripAdvisorAPI implements RoomAPI {
         roomsBase[4] = trAdRoom5;
     }
 
-
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room[] roomsByParameters = new Room[roomsBase.length];
         int count = 0;
@@ -37,7 +34,7 @@ public class TripAdvisorAPI implements RoomAPI {
                 count++;
             }
         }
-        roomsByParameters = arraysChange.arrayDecrease(roomsByParameters);
+        roomsByParameters = ArraysChange.arrayDecrease(roomsByParameters);
         //       System.out.println(Arrays.toString(roomsByParameters));
         return roomsByParameters;
     }

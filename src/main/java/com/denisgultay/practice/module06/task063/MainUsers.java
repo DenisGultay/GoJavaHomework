@@ -19,16 +19,15 @@ public class MainUsers {
         users[8] = new User(5L, "Andriy", "Shevchenko", 35000, 150000);
         users[9] = null;
 
-         UserUtils userUtils = null;
-//        userUtils.usersWithContitionalBalance(users, 150000);
-//        System.out.println("----------------------------------");
-//        userUtils.getUsersId(users);
-//        System.out.println("----------------------------------");
-//        userUtils.uniqueUsers(users);
-//        System.out.println("----------------------------------");
-//        userUtils.deleteEmptyUsers(users);
-//        System.out.println("----------------------------------");
-          userUtils.paySalaryToUsers(users);
+        UserUtils.usersWithContitionalBalance(users, 150000);
+        System.out.println("----------------------------------");
+        UserUtils.getUsersId(users);
+        System.out.println("----------------------------------");
+        UserUtils.uniqueUsers(users);
+        System.out.println("----------------------------------");
+        UserUtils.deleteEmptyUsers(users);
+        System.out.println("----------------------------------");
+        UserUtils.paySalaryToUsers(users);
 
 
     }

@@ -3,6 +3,7 @@ package com.denisgultay.practice.module07.task071;
 import com.denisgultay.practice.module04.task042.Currency;
 
 import java.util.Comparator;
+import java.util.TreeSet;
 
 public class Order implements Comparable <Order> {
     private long id;
@@ -65,6 +66,34 @@ public class Order implements Comparable <Order> {
         this.user = user;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order)) return false;
+
+        Order order = (Order) o;
+
+        if (getId() != order.getId()) return false;
+        if (getPrice() != order.getPrice()) return false;
+        if (getCurrency() != order.getCurrency()) return false;
+        if (getItemName() != null ? !getItemName().equals(order.getItemName()) : order.getItemName() != null)
+            return false;
+        if (getShopIdentificator() != null ? !getShopIdentificator().equals(order.getShopIdentificator()) : order.getShopIdentificator() != null)
+            return false;
+        return getUser().equals(order.getUser());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (getId() ^ (getId() >>> 32));
+        result = 31 * result + getPrice();
+        result = 31 * result + getCurrency().hashCode();
+        result = 31 * result + (getItemName() != null ? getItemName().hashCode() : 0);
+        result = 31 * result + (getShopIdentificator() != null ? getShopIdentificator().hashCode() : 0);
+        result = 31 * result + getUser().hashCode();
+        return result;
+    }
+
     public int compareTo(Order o) {
         return -(this.price - o.price);
     }
@@ -77,8 +106,10 @@ public class Order implements Comparable <Order> {
                 mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
             return mark;
+
         }
-    };public static Comparator<Order> NameIdCityComp = new Comparator<Order>() {
+    };
+    public static Comparator<Order> NameIdCityComp = new Comparator<Order>() {
 
         public int compare(Order o1, Order o2) {
             int mark = o1.getItemName().compareTo(o2.getItemName());
@@ -91,6 +122,11 @@ public class Order implements Comparable <Order> {
             return mark;
         }
     };
+
+//    public static boolean orderByUserLastName(TreeSet<Order>, String lastName){
+//
+//
+//    }
 
 
 

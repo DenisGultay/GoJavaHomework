@@ -6,7 +6,6 @@ import com.denisgultay.practice.module07.task071.Order;
 import com.denisgultay.practice.module07.task071.User;
 
 import java.util.Iterator;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class SetMain {
@@ -25,7 +24,7 @@ public class SetMain {
         User Bale = new User(111L, "Cristian", "Bale", "Boston", 5000);
 
 
-        Set<Order> orderSet = new TreeSet<>();
+        TreeSet<Order> orderSet = new TreeSet<>();
         orderSet.add(new Order(101L, 10, Currency.USD, "Insomnia", "KSD", Willis));
         orderSet.add(new Order(102L, 20, Currency.EUR, "Christine", "ABG", Damond));
         orderSet.add(new Order(103L, 40, Currency.UAH, "Misery", "KSD", Smith));
@@ -37,9 +36,11 @@ public class SetMain {
         orderSet.add(new Order(104L, 20, Currency.USD, "Green Mile", "FOL", Bale));
         orderSet.add(new Order(110L, 30, Currency.UAH, "It", "AST", Pitt));
 
-        //   System.out.println(orderByUserLastName((TreeSet<Order>) orderSet, "Petrov"));
-        //     System.out.println(maxPriceOrder((TreeSet<Order>) orderSet));
-        System.out.println(nonDollarOrder((TreeSet<Order>) orderSet));
+        System.out.println(orderByUserLastName(orderSet, "Depp"));
+        System.out.println(maxPriceOrder(orderSet));
+        System.out.println(orderSet);
+
+
     }
 
     public static boolean orderByUserLastName(TreeSet<Order> treeSetOrders, String lastName) {
@@ -63,13 +64,11 @@ public class SetMain {
         return maxPriceOrder;
     }
 
-    public static TreeSet<Order> nonDollarOrder(TreeSet<Order> orders) {
+    public static void nonDollarOrder(TreeSet<Order> orders) {
         Iterator<Order> iterator = orders.iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().getCurrency().equals(Currency.USD)) {
+            if (iterator.next().getCurrency().equals(Currency.USD))
                 iterator.remove();
-            }
         }
-        return orders;
     }
 }

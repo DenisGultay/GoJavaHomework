@@ -36,7 +36,7 @@ public class ListMain {
         orderList.add(new Order(109L, 10, Currency.USD, "Insomnia", "KSD", Petrov));
         orderList.add(new Order(110L, 30, Currency.UAH, "It", "AST", Kirilov));
 
-        Collections.sort(orderList);
+        Collections.sort(orderList, Order.PriceCompare);
         System.out.println(orderList);
         System.out.println();
         Collections.sort(orderList, Order.PriceAndCityComp);

@@ -95,8 +95,14 @@ public class Order implements Comparable<Order> {
     }
 
     public int compareTo(Order o) {
-        return -(this.price - o.price);
+        return (int) (this.id - o.id);
     }
+
+    public static Comparator<Order> PriceCompare = new Comparator<Order>() {
+        public int compare(Order o1, Order o2) {
+            return -(o1.getPrice() - o2.getPrice());
+        }
+    };
 
     public static Comparator<Order> PriceAndCityComp = new Comparator<Order>() {
 
@@ -106,7 +112,6 @@ public class Order implements Comparable<Order> {
                 mark = o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
             return mark;
-
         }
     };
     public static Comparator<Order> NameIdCityComp = new Comparator<Order>() {

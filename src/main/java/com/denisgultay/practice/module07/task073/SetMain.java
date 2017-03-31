@@ -36,9 +36,11 @@ public class SetMain {
         orderSet.add(new Order(104L, 20, Currency.USD, "Green Mile", "FOL", Bale));
         orderSet.add(new Order(110L, 30, Currency.UAH, "It", "AST", Pitt));
 
-        System.out.println(orderByUserLastName(orderSet, "Depp"));
+        System.out.println(orderByUserLastName(orderSet, "Petrov"));
+        System.out.println();
         System.out.println(maxPriceOrder(orderSet));
-        System.out.println(orderSet);
+        System.out.println();
+        System.out.println(nonDollarOrder(orderSet));
 
 
     }
@@ -53,7 +55,6 @@ public class SetMain {
     }
 
     public static Order maxPriceOrder(TreeSet<Order> orders) {
-
         Order maxPriceOrder = orders.last();
         for (Order order : orders) {
             if (order.getPrice() > orders.last().getPrice()) {
@@ -64,11 +65,12 @@ public class SetMain {
         return maxPriceOrder;
     }
 
-    public static void nonDollarOrder(TreeSet<Order> orders) {
+    public static TreeSet<Order> nonDollarOrder(TreeSet<Order> orders) {
         Iterator<Order> iterator = orders.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().getCurrency().equals(Currency.USD))
                 iterator.remove();
         }
+        return orders;
     }
 }

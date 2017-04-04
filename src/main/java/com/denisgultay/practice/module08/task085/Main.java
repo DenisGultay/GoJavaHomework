@@ -9,13 +9,14 @@ public class Main {
     public static void main(String[] args) {
 
         Food bananas = new Food(IdGenerator.createId(), "bananas", Country.EQUADOR, 14);
-
-        System.out.println(bananas);
-
         Food apples = new Food(IdGenerator.createId(), "apples", Country.POLAND, 30);
-        System.out.println(apples);
-        System.out.println(apples.getId());
         Food chees = new Food(IdGenerator.createId(), "chees", Country.NETHERLANDS, 60);
-        System.out.println(chees);
-    }
+        Food potatoes = new Food(IdGenerator.createId(), "potatoes", Country.UKRAINE, 90);
+        Food coffee = new Food(IdGenerator.createId(), "coffee", Country.BRAZIL, 360);
+        Food tea = new Food(IdGenerator.createId(), "tea", Country.ENGLAND, 360);
+        Food rice = new Food(IdGenerator.createId(), "rice", Country.CHINA, 240);
+        Food oil = new Food(IdGenerator.createId(), "oil", Country.UKRAINE, 120);
+        Food strawberry = new Food(IdGenerator.createId(), "strawberry", Country.POLAND, 30);
+
+     }
 }

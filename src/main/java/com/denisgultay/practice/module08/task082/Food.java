@@ -5,7 +5,7 @@ import com.denisgultay.practice.module08.task081.IdGenerator;
 
 public class Food {
 
-    private long id = IdGenerator.createId();
+    private long id;
     private String name;
     private Country country;
     private int expiration;
@@ -52,19 +52,12 @@ public class Food {
 
         Food food = (Food) o;
 
-        if (getId() != food.getId()) return false;
-        if (getExpiration() != food.getExpiration()) return false;
-        if (!getName().equals(food.getName())) return false;
-        return getCountry() == food.getCountry();
+        return getId() == food.getId();
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (getId() ^ (getId() >>> 32));
-        result = 31 * result + getName().hashCode();
-        result = 31 * result + getCountry().hashCode();
-        result = 31 * result + getExpiration();
-        return result;
+        return (int) (getId() ^ (getId() >>> 32));
     }
 
     @Override

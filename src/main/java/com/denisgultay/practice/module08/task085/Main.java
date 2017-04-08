@@ -3,6 +3,9 @@ package com.denisgultay.practice.module08.task085;
 import com.denisgultay.practice.module08.task081.Country;
 import com.denisgultay.practice.module08.task081.IdGenerator;
 import com.denisgultay.practice.module08.task082.Food;
+import com.denisgultay.practice.module08.task084.FoodDataBase;
+
+import java.util.Map;
 
 public class Main {
 
@@ -18,5 +21,23 @@ public class Main {
         Food oil = new Food(IdGenerator.createId(), "oil", Country.UKRAINE, 120);
         Food strawberry = new Food(IdGenerator.createId(), "strawberry", Country.POLAND, 30);
 
-     }
+
+        FoodDataBase foodDataBase = new FoodDataBase();
+        foodDataBase.save(potatoes, 20.25);
+        foodDataBase.save(chees, 59.60);
+        foodDataBase.save(apples, 15.36);
+        foodDataBase.save(bananas, 18.00);
+        foodDataBase.save(coffee, 105.50);
+        foodDataBase.save(oil, 35.70);
+        foodDataBase.save(rice, 18.00);
+        foodDataBase.save(strawberry, 55.36);
+        foodDataBase.save(tea);
+
+        System.out.println(foodDataBase.getProducts());
+        System.out.println(foodDataBase.getPrices());
+        foodDataBase.delete(rice);
+        foodDataBase.delete(tea);
+        System.out.println(foodDataBase.getProducts());
+
+    }
 }

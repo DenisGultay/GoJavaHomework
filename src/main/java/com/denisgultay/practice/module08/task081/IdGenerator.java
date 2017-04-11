@@ -5,11 +5,12 @@ import com.denisgultay.practice.module08.task082.Food;
 
 public final class IdGenerator {
 
+    private static Integer basicId = 0;
+
     private IdGenerator() {
     }
 
-    public static final long createId(){
-        long uniqueId = (long) (Math.random()*1000);
-    return uniqueId;
+    public final static Integer getNewId() {
+        return ++basicId;
     }
 }

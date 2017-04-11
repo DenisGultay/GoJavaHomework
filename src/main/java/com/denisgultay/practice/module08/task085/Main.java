@@ -11,15 +11,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Food bananas = new Food(IdGenerator.createId(), "bananas", Country.EQUADOR, 14);
-        Food apples = new Food(IdGenerator.createId(), "apples", Country.POLAND, 30);
-        Food chees = new Food(IdGenerator.createId(), "chees", Country.NETHERLANDS, 60);
-        Food potatoes = new Food(IdGenerator.createId(), "potatoes", Country.UKRAINE, 90);
-        Food coffee = new Food(IdGenerator.createId(), "coffee", Country.BRAZIL, 360);
-        Food tea = new Food(IdGenerator.createId(), "tea", Country.ENGLAND, 360);
-        Food rice = new Food(IdGenerator.createId(), "rice", Country.CHINA, 240);
-        Food oil = new Food(IdGenerator.createId(), "oil", Country.UKRAINE, 120);
-        Food strawberry = new Food(IdGenerator.createId(), "strawberry", Country.POLAND, 30);
+        Food bananas = new Food(IdGenerator.getNewId(), "bananas", Country.EQUADOR, 14);
+        Food apples = new Food(IdGenerator.getNewId(), "apples", Country.POLAND, 30);
+        Food chees = new Food(IdGenerator.getNewId(), "chees", Country.NETHERLANDS, 60);
+        Food potatoes = new Food(IdGenerator.getNewId(), "potatoes", Country.UKRAINE, 90);
+        Food coffee = new Food(IdGenerator.getNewId(), "coffee", Country.BRAZIL, 360);
+        Food tea = new Food(IdGenerator.getNewId(), "tea", Country.ENGLAND, 360);
+        Food rice = new Food(IdGenerator.getNewId(), "rice", Country.CHINA, 240);
+        Food oil = new Food(IdGenerator.getNewId(), "oil", Country.UKRAINE, 120);
+        Food strawberry = new Food(IdGenerator.getNewId(), "strawberry", Country.POLAND, 30);
 
 
         FoodDataBase foodDataBase = new FoodDataBase();
@@ -37,7 +37,11 @@ public class Main {
         System.out.println(foodDataBase.getPrices());
         foodDataBase.delete(rice);
         foodDataBase.delete(tea);
+        foodDataBase.deleteById(3);
         System.out.println(foodDataBase.getProducts());
+        System.out.println(foodDataBase.get(5));
+        System.out.println(foodDataBase.getPrice(strawberry));
 
     }
+
 }

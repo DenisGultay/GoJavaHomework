@@ -5,19 +5,19 @@ import com.denisgultay.practice.module08.task081.IdGenerator;
 
 public class Food {
 
-    private long id;
+    private int id;
     private String name;
     private Country country;
     private int expiration;
 
-    public Food(long id, String name, Country country, int expiration) {
+    public Food(int id, String name, Country country, int expiration) {
         this.id = id;
         this.name = name;
         this.country = country;
         this.expiration = expiration;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

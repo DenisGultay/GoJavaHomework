@@ -29,10 +29,9 @@ public class FoodDataBase<T extends Food> implements IManageSystem<T> {
     @Override
     public void deleteById(int id) {
         Set<T> foodId = dataBase.keySet();
-        for (T food : foodId) {
-            if (food.getId() == id) {
-                dataBase.remove(food);
-            }
+        for (Iterator<T> iter = foodId.iterator(); iter.hasNext();){
+            if(iter.next().getId() == id)
+                iter.remove();
         }
     }
 

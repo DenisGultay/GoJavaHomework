@@ -1,14 +1,14 @@
-package com.denisgultay.practice.module07.task072;
+package com.denisgultay.practice.module09.task091;
 
 import com.denisgultay.practice.module04.task042.Currency;
 import com.denisgultay.practice.module07.task071.Order;
 import com.denisgultay.practice.module07.task071.User;
-import java.util.Set;
-import java.util.TreeSet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
-public class ListMain {
+public class Java8ExampleMain {
 
     public static void main(String[] args) {
 
@@ -37,16 +37,6 @@ public class ListMain {
         orderList.add(new Order(110L, 30, Currency.UAH, "It", "AST", Kirilov));
 
 
-        Collections.sort(orderList, Order.PriceCompare);
-        System.out.println(orderList);
-        System.out.println();
-        Collections.sort(orderList, Order.PriceAndCityComp);
-        System.out.println(orderList);
-        System.out.println();
-        Collections.sort(orderList,Order.NameIdCityComp);
-        System.out.println(orderList);
 
     }
-
-
 }

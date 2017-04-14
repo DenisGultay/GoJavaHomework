@@ -1,12 +1,8 @@
 package com.denisgultay.practice.module09.task091;
 
-import com.denisgultay.practice.module04.task042.Currency;
-import com.denisgultay.practice.module07.task071.Order;
-import com.denisgultay.practice.module07.task071.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Java8ExampleMain {
 
@@ -24,19 +20,35 @@ public class Java8ExampleMain {
         User Bohdanov = new User(111L, "Bohdan", "Bohdanov", "Lviv", 5000);
 
 
-        List<Order> orderList = new ArrayList<Order>();
-        orderList.add(new Order(101L, 10, Currency.USD, "Insomnia", "KSD", Bohdanov));
-        orderList.add(new Order(102L, 20, Currency.EUR, "Christine", "ABG", Antonov));
-        orderList.add(new Order(103L, 40, Currency.UAH, "Misery", "KSD", Viktorov));
-        orderList.add(new Order(104L, 20, Currency.USD, "Green Mile", "FOL", Danilov));
-        orderList.add(new Order(105L, 40, Currency.UAH, "Dreamcatcher", "KSD", Pavlov));
-        orderList.add(new Order(106L, 10, Currency.EUR, "Revival", "ABG", Borisov));
-        orderList.add(new Order(107L, 50, Currency.UAH, "Green Mile", "FOL", Myhailov));
-        orderList.add(new Order(108L, 50, Currency.UAH, "Desperation", "KSD", Denisov));
-        orderList.add(new Order(109L, 10, Currency.USD, "Insomnia", "KSD", Petrov));
-        orderList.add(new Order(110L, 30, Currency.UAH, "It", "AST", Kirilov));
+        List<Orders> orderList = new ArrayList<Orders>();
+        orderList.add(new Orders(101L, 1000, Currency.USD, "Insomnia", "KSD", Bohdanov));
+        orderList.add(new Orders(102L, 2000, Currency.EUR, "Christine", "ABG", Antonov));
+        orderList.add(new Orders(103L, 400, Currency.USD, "Misery", "KSD", Viktorov));
+        orderList.add(new Orders(104L, 2000, Currency.USD, "Green Mile", "FOL", Danilov));
+        orderList.add(new Orders(105L, 4000, Currency.EUR, "Dreamcatcher", "KSD", Pavlov));
+        orderList.add(new Orders(106L, 1000, Currency.EUR, "Revival", "ABG", Borisov));
+        orderList.add(new Orders(107L, 5000, Currency.USD, "Green Mile", "FOL", Myhailov));
+        orderList.add(new Orders(108L, 500, Currency.USD, "Desperation", "KSD", Denisov));
+        orderList.add(new Orders(109L, 1500, Currency.USD, "Insomnia", "KSD", Petrov));
+        orderList.add(new Orders(110L, 3000, Currency.EUR, "It", "AST", Kirilov));
+        orderList.add(new Orders(106L, 1000, Currency.EUR, "Revival", "ABG", Borisov));
+        orderList.add(new Orders(109L, 1500, Currency.USD, "Insomnia", "KSD", Petrov));
+        orderList.add(new Orders(102L, 2000, Currency.EUR, "Christine", "ABG", Antonov));
 
+//        MethodsClass.sortByPricesDown(orderList);
+//        System.out.println("List sorted by prices(decrease): ");
+//        orderList.forEach(System.out::println);
+//
+//        MethodsClass.sortByPricesUpAndCity(orderList);
+//        System.out.println("List sorted by prices & user's city: ");
+//        orderList.forEach(System.out::println);
 
+//        MethodsClass.sortByItemNameIdAndCity(orderList);
+//        System.out.println("List sorted by itemName, order's ID & user's city: ");
+//        orderList.forEach(System.out::println);
 
+        MethodsClass.removeDuplicateOrders(orderList);
+        System.out.println("List sorted by itemName, order's ID & user's city: ");
+        orderList.forEach(System.out::println);
     }
 }

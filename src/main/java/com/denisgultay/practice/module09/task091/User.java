@@ -1,5 +1,6 @@
 package com.denisgultay.practice.module09.task091;
 
+
 public class User {
 
     private long id;
@@ -50,6 +51,26 @@ public class User {
         this.lastName = lastName;
         this.city = city;
         this.balance = balance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (getId() != user.getId()) return false;
+        if (!getLastName().equals(user.getLastName())) return false;
+        return getCity().equals(user.getCity());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (getId() ^ (getId() >>> 32));
+        result = 31 * result + getLastName().hashCode();
+        result = 31 * result + getCity().hashCode();
+        return result;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.denisgultay.practice.module09.task091;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Java8ExampleMain {
 
@@ -47,8 +48,16 @@ public class Java8ExampleMain {
 //        System.out.println("List sorted by itemName, order's ID & user's city: ");
 //        orderList.forEach(System.out::println);
 
-        MethodsClass.removeDuplicateOrders(orderList);
-        System.out.println("List sorted by itemName, order's ID & user's city: ");
-        orderList.forEach(System.out::println);
+//        System.out.println("List without duplicate orders: ");
+//        MethodsClass.removeDuplicateOrders(orderList);
+
+//        System.out.println("List without orders with price less 1500: ");
+//        MethodsClass.removeOrdersWithPriceLessSomeValue(orderList);
+
+//        System.out.println("Order with currency - EURO");
+//        MethodsClass.divideListByCurrency(orderList, Currency.EUR);
+
+        Map<String, List<Orders>> uniqueCityOfUsers = MethodsClass.listsWithUniqueCity(orderList);
+        uniqueCityOfUsers.forEach(((s, orders) -> System.out.println(s + ": " + orders)));
     }
 }

@@ -36,28 +36,42 @@ public class Java8ExampleMain {
         orderList.add(new Orders(109L, 1500, Currency.USD, "Insomnia", "KSD", Petrov));
         orderList.add(new Orders(102L, 2000, Currency.EUR, "Christine", "ABG", Antonov));
 
-//        MethodsClass.sortByPricesDown(orderList);
-//        System.out.println("List sorted by prices(decrease): ");
-//        orderList.forEach(System.out::println);
-//
-//        MethodsClass.sortByPricesUpAndCity(orderList);
-//        System.out.println("List sorted by prices & user's city: ");
-//        orderList.forEach(System.out::println);
+        MethodsClass.sortByPricesDown(orderList);
+        System.out.println("List sorted by prices(decrease): ");
+        orderList.forEach(System.out::println);
 
-//        MethodsClass.sortByItemNameIdAndCity(orderList);
-//        System.out.println("List sorted by itemName, order's ID & user's city: ");
-//        orderList.forEach(System.out::println);
+        MethodsClass.sortByPricesUpAndCity(orderList);
+        System.out.println("List sorted by prices & user's city: ");
+        orderList.forEach(System.out::println);
 
-//        System.out.println("List without duplicate orders: ");
-//        MethodsClass.removeDuplicateOrders(orderList);
+        MethodsClass.sortByItemNameIdAndCity(orderList);
+        System.out.println("List sorted by itemName, order's ID & user's city: ");
+        orderList.forEach(System.out::println);
 
-//        System.out.println("List without orders with price less 1500: ");
-//        MethodsClass.removeOrdersWithPriceLessSomeValue(orderList);
+        System.out.println("List without duplicate orders: ");
+        MethodsClass.removeDuplicateOrders(orderList);
 
-//        System.out.println("Order with currency - EURO");
-//        MethodsClass.divideListByCurrency(orderList, Currency.EUR);
+        System.out.println("List without orders with price less 1500: ");
+        MethodsClass.removeOrdersWithPriceLessSomeValue(orderList);
 
+        System.out.println("Order with currency - EURO");
+        MethodsClass.divideListByCurrency(orderList, Currency.EUR);
+
+        System.out.println("Orders sorted by city: ");
         Map<String, List<Orders>> uniqueCityOfUsers = MethodsClass.listsWithUniqueCity(orderList);
         uniqueCityOfUsers.forEach(((s, orders) -> System.out.println(s + ": " + orders)));
+
+        checkingOrdersByUsersLastName(orderList, "Petrov");
+        checkingOrdersByUsersLastName(orderList, "Sidorov");
+
+        System.out.println("List without USD orders: ");
+        List<Orders> ordersWithoutUSD = MethodsClass.removeOrdersWithCurrency(orderList, Currency.USD);
+        ordersWithoutUSD.forEach((System.out::println));
+
+    }
+
+    public static void checkingOrdersByUsersLastName(List<Orders> orders, String lastName) {
+        System.out.print("Orders set contain order with user's last name - " + lastName + " :");
+        System.out.println(MethodsClass.checkingListContainsUsersLastName(orders, lastName));
     }
 }

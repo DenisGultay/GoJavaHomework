@@ -3,6 +3,7 @@ package com.denisgultay.practice.module09.task091;
 
 import com.denisgultay.practice.module07.task071.Order;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +52,13 @@ public final class MethodsClass {
         return orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity()));
     }
 
+    public final static boolean checkingListContainsUsersLastName(List<Orders> orders, String lastName) {
+        return orders.stream().anyMatch(o -> o.getUser().getLastName().equals(lastName));
+    }
+
+    public final static List<Orders> removeOrdersWithCurrency(List<Orders> orders, Currency currency) {
+        return orders.stream().filter(o -> o.getCurrency() != currency).collect(Collectors.toCollection(ArrayList::new));
+    }
 }
 
 

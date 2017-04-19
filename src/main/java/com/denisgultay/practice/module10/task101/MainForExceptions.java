@@ -1,6 +1,8 @@
 package com.denisgultay.practice.module10.task101;
 
-public class MainForExeptions {
+import com.denisgultay.practice.module10.task102.MyFirstException;
+
+public class MainForExceptions {
 
     public static void main(String[] args) {
 

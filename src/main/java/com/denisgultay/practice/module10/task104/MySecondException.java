@@ -1,10 +1,9 @@
-package com.denisgultay.practice.module10.task102;
+package com.denisgultay.practice.module10.task104;
 
-public class MyFirstException extends ClassCastException  {
-
+public class MySecondException  extends IndexOutOfBoundsException{
     private String exceptMessage;
 
-    public MyFirstException(String st) {
+    public MySecondException(String st) {
         super(st);
         exceptMessage = st;
     }
@@ -12,5 +11,4 @@ public class MyFirstException extends ClassCastException  {
     public void printException(){
         System.out.println(exceptMessage);
     }
-
 }

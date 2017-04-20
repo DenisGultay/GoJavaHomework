@@ -18,9 +18,10 @@ public class MainForMyFirstException {
 
         try {
             throw new MyFirstException("Another my exception!");
-        } catch (MyFirstException ex) {
-            ex.printException();
-            System.out.println("We catch " + ex.getClass().getName() + " exception");
+        } catch (MyFirstException fe) {
+            System.out.println("We catch " + fe.getClass().getName() + " exception");
+        } catch (RuntimeException ex) {
+            ex.getStackTrace();
         }
     }
 }

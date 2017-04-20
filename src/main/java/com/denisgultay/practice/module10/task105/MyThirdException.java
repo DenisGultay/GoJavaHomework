@@ -1,10 +1,10 @@
-package com.denisgultay.practice.module10.task102;
+package com.denisgultay.practice.module10.task105;
 
-public class MyFirstException extends ClassCastException  {
+public class MyThirdException  extends ArithmeticException{
 
     private String exceptMessage;
 
-    public MyFirstException(String st) {
+    public MyThirdException(String st) {
         super(st);
         exceptMessage = st;
     }
@@ -12,5 +12,4 @@ public class MyFirstException extends ClassCastException  {
     public void printException(){
         System.out.println(exceptMessage);
     }
-
 }

@@ -1,0 +1,3 @@
+First string of file
+This is second string of file
+And this is third string of file

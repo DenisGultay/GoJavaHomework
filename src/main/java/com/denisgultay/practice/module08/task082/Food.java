@@ -10,8 +10,8 @@ public class Food {
     private Country country;
     private int expiration;
 
-    public Food(int id, String name, Country country, int expiration) {
-        this.id = id;
+    public Food(String name, Country country, int expiration) {
+        this.id = IdGenerator.getNewId(name, country, expiration);
         this.name = name;
         this.country = country;
         this.expiration = expiration;

@@ -4,9 +4,8 @@ public class MainForMyFirstException {
 
     public static void main(String[] args) {
 
-        MyFirstException mfe = new MyFirstException("This is my exception!");
         try {
-            throw mfe;
+          throw new  MyFirstException("This is my exception!");
         } catch (MyFirstException e) {
             e.printException();
             System.out.println("We catch " + e.getClass().getName() + " exception");

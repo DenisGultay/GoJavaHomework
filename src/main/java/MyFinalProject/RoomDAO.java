@@ -152,7 +152,7 @@ public class RoomDAO implements DAO<Room> {
                 writerToFile(file, roomList);
             }
         } catch (NoSuchElementException e) {
-            System.err.printf("The finalProject.Room with this ID %d isn`t in base." + "\n", room.getId());
+            System.err.printf("The Room with this ID %d isn`t in base." + "\n", room.getId());
             return false;
         } catch (NullPointerException e) {
             System.err.println("Add correct information to file!");

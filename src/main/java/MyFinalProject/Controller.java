@@ -30,7 +30,7 @@ public class Controller {
     //Enter to system for user
     public User enter(String name, String pass) {
         if (UserDAO.getUserDAO().getBase().size() == 0) {
-            System.out.println("MyFinalProject.User hasn`t been found");
+            System.out.println("User hasn`t been found");
             return null;
         }
         User user = null;
@@ -52,7 +52,7 @@ public class Controller {
                 room.getUserReserved() != null).filter(room -> room.getUserReserved().
                 equals(user)).collect(Collectors.toList());
         if (list.size() == 0) {
-            System.out.println("haven`t booking rooms");
+            System.out.println("Haven`t booking rooms");
         }
         return list;
     }
@@ -127,7 +127,7 @@ public class Controller {
                         System.out.println("You hasn`t booked this room");
                     }
                 } catch (NoSuchElementException | NullPointerException e) {
-                    System.err.printf("MyFinalProject.Room with ID %d in hotel with ID %d hasn`t been found \n", roomId, hotelId);
+                    System.err.printf("Room with ID %d in hotel with ID %d hasn`t been found \n", roomId, hotelId);
                 }
             } catch (NoSuchElementException | NullPointerException e) {
                 System.err.printf("The hotel with ID %d is absent in base\n", hotelId);
@@ -161,7 +161,7 @@ public class Controller {
                         room.getPersons() == Integer.parseInt(personsString)).collect(Collectors.toList());
             } catch (NumberFormatException e) {
                 System.err.println("Error, when you entering count of users. You need int number or * symbol." +
-                        "Thats why this filter hadn`t been using");
+                        "That's why this filter hadn`t been using");
             }
         }
 
@@ -170,7 +170,7 @@ public class Controller {
                 maxPriceInt = Integer.parseInt(maxPriceStr);
             } catch (NumberFormatException e) {
                 System.err.println("Error, when you entering max price. You need int number or * symbol." +
-                        "Thats why this filter hadn`t been using");
+                        "That's why this filter hadn`t been using");
             }
         }
 
@@ -179,7 +179,7 @@ public class Controller {
                 minPriceInt = Integer.parseInt(minPriceStr);
             } catch (NumberFormatException e) {
                 System.err.println("Error, when you entering min price. You need int number or * symbol." +
-                        "Thats why this filter hadn`t been using");
+                        "That's why this filter hadn`t been using");
             }
         }
 
@@ -287,7 +287,7 @@ public class Controller {
         List <User> list = UserDAO.getUserDAO().getBase().stream().filter(user ->
         user.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
         if(list.size() == 0)
-            System.out.println("MyFinalProject.User hasn`t been found");
+            System.out.println("User hasn`t been found");
         return list;
     }
 

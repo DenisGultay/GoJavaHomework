@@ -17,7 +17,7 @@ public class Admin {
         first:
         while (true) {
             System.out.println("1- find user by name," +
-                    " 2 - users activity(booked rooms," +
+                    " 2 - users activity(booked rooms)," +
                     " 3- delete users," +
                     "\n4- find hotels by name," +
                     " 5 - find hotels by city," +
@@ -36,8 +36,8 @@ public class Admin {
             if (choice1.equals("2")) {
                 System.out.println("Users activity. Booking rooms:");
                 List<Room> booked = controller.booked();
-                if (booked.size() == 0) System.out.println("hasn`t booking rooms");
-                booked.stream().forEach(r -> System.out.println(r + "has been booked by " + r.getUserReserved()));
+                if (booked.size() == 0) System.out.println("Hasn`t booking rooms");
+                booked.stream().forEach(r -> System.out.println(r + "Has been booked by " + r.getUserReserved()));
                 System.out.println();
                 continue first;
             }
@@ -158,7 +158,7 @@ public class Admin {
                     Hotel hotel = controller.findHotelById(id);
                     if (hotel == null) continue;
                     while (true) {
-                        System.out.println("Editing hotrl " + hotel +
+                        System.out.println("Editing hotel " + hotel +
                                 "\n Put new name for hotel and city using symbol /, example: Hilton/Kiev; 0 - cancel");
 
                         String choice3 = br.readLine();
